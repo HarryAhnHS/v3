@@ -44,7 +44,7 @@ export default function Home() {
             <li>📚 studying BS/MS in CS @ USC Viterbi School of Engineering</li>
             <li>🚀 building at <b>LavaLab</b>, USC’s premier startup incubator.</li>
             <li>💻 developing at <b>USC University Advancement</b>.</li>
-            <li>🤖 learning ML & AI with CS50 AI at Harvard and Google.</li>
+            <li>🤖 self-learning with CS50 AI at Harvard and Google.</li>
           </ul>
         </li>
         {/* History */}
