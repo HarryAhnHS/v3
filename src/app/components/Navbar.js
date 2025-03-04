@@ -1,7 +1,7 @@
 export default function Navbar() {
     return (
         <div>
-            This is nav
+            Horizontal navbar
         </div>
     );
 }

@@ -1,8 +1,12 @@
-'use client';
+"use client";
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import Link from "next/link";
+
+import Me from "@/app/assets/me.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,15 +22,69 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen font-sans p-8">
-      <section className="fade-in text-5xl font-bold">Harry Ahn</section>
-      <section className="fade-in text-xl mt-4">Software Engineer</section>
-      <section className="fade-in mt-16 max-w-2xl">
-        <p>
-          I build minimalistic, high-performance web applications with a focus on
-          simplicity and user experience.
-        </p>
-      </section>
+    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-6 sm:px-12">
+      {/* Name and Intro */}
+      <section className="fade-in flex items-center justify-center mt-10 gap-4 w-full">
+        <div className="fade-in w-24 h-24 sm:w-40 sm:h-40 relative rounded-full overflow-hidden shadow-lg">
+          <Image src={Me} alt="Harry Ahn" layout="fill" objectFit="cover" />
+        </div>
+        <div className="">
+          <h1 className="fade-in text-4xl text-gray-700 dark:text-white">Harry Ahn</h1>
+          <h2 className="fade-in text-xl sm:text-xl text-gray-700 dark:text-white">
+            Full-Stack Software Engineer
+          </h2>
+        </div>
+      </section >
+
+      <ul>
+        {/* Current */}
+        <li className="fade-in mt-10 w-full">
+          <h3 className="font-italic text-gray-700 dark:text-gray-300">currently, I am:</h3>
+          <ul className="mt-2 text-gray-600 dark:text-gray-400 space-y-2">
+            <li>📚 studying BS/MS in CS @ USC Viterbi School of Engineering</li>
+            <li>🚀 building at <b>LavaLab</b>, USC’s premier startup incubator.</li>
+            <li>💻 developing at <b>USC University Advancement</b>.</li>
+            <li>🤖 learning ML & AI with CS50 AI at Harvard and Google.</li>
+          </ul>
+        </li>
+        {/* History */}
+        <li className="fade-in mt-10 w-full">
+          <h3 className="font-italic text-gray-700 dark:text-gray-300">recently, I:</h3>
+          <ul className="mt-2 text-gray-600 dark:text-gray-400 space-y-2">
+            <li>🔹 interned as SWE at <b>Qraft Technologies</b>, a fintech startup.</li>
+            <li>🔹 completed <b>The Odin Project</b>, a comprehensive coding bootcamp in full-stack JS.</li>
+            <li>🔹 created a <b>fully-functional </b> for fun (and extra credit!).</li>
+          </ul>
+        </li>
+        {/* Fun Facts */}
+        <li className="fade-in mt-10 w-full">
+          <h3 className="font-italic text-gray-700 dark:text-gray-300">did you know:</h3>
+          <ul className="mt-2 text-gray-600 dark:text-gray-400 space-y-2">
+            <li>🌎 lived in Korea, France, Singapore, Hong Kong, and the UK.</li>
+            <li>🎭 i changed my major every year since started university.</li>
+            <li>☕ iced coffee is my blood type (얼죽아).</li>
+          </ul>
+        </li>
+        {/* Skills and Frameworks */}
+        <li className="fade-in mt-10 w-full">
+          <h3 className="font-italic text-gray-700 dark:text-gray-300">skills:</h3>
+          <ul className="mt-2 text-gray-600 dark:text-gray-400 space-y-2">
+
+          </ul>
+        </li>
+      </ul>
+      
+
+      
+
+      {/* Navigation */}
+      <div className="fade-in mt-12">
+        <Link href="/projects">
+          <span className="px-6 py-3 rounded-lg border-2 border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 transition-all hover:bg-gray-800 hover:text-white dark:hover:bg-gray-700">
+            See My Projects →
+          </span>
+        </Link>
+      </div>
     </div>
   );
 }
