@@ -4,48 +4,38 @@ import { useState } from "react";
 import { Search } from "lucide-react";
 import Link from "next/link";
 
-import Demo from "../assets/projects/Demo.png";
+import Flexor from "../assets/projects/Flexor.png";
 import ProjectList from "../components/ProjectList";
 
 const projects = [
   {
-    title: "Shakespeare Translator",
-    href: "https://yourtranslatorapp.com",
-    description: "A web app that translates modern English to Shakespearean English.",
-    image: Demo,
-    imageAlt: "Shakespeare Translator app",
-    technologies: ["React", "Next.js", "TailwindCSS", "GPT-4"],
-    github: "https://github.com/yourrepo/shakespeare-translator",
-    demo: "https://yourtranslatorapp.com",
+    title: "Flexor",
+    href: "https://flexor-front-end-2c6r.vercel.app/",
+    description: "An interactive real-time social media platform, allowing users to create/join communities and scaled to support 100,000+ posts.",
+    image: Flexor,
+    imageAlt: "Flexor",
+    technologies: ["React", "Node.js", "Express.js", "PostGreSQL", "TailwindCSS", "RestAPI"],
+    github: "https://github.com/HarryAhnHS/flexor-front-end",
+    demo: "https://flexor-front-end-2c6r.vercel.app",
   },
   {
-    title: "Match Your Freak",
-    href: "https://matchyourfreak.com",
-    description: "A personality and humor-based matching app for making friends.",
-    image: Demo,
+    title: "FileStorage",
+    href: "https://file-storage-production.up.railway.app/",
+    description: "A secure and easy-to-use online file storage solution. Start organizing and accessing your files from anywhere in the world.",
+    image: Flexor,
     imageAlt: "Match Your Freak app",
-    technologies: ["React Native", "Firebase", "Node.js", "Twilio API"],
-    github: "https://github.com/yourrepo/match-your-freak",
-    demo: "https://matchyourfreak.com",
-  },
-  {
-    title: "AI Quiz Generator",
-    href: "https://aiquiztool.com",
-    description: "An AI-powered tool that generates multiple-choice questions from user input.",
-    image: Demo,
-    imageAlt: "AI Quiz Generator",
-    technologies: ["React", "Next.js", "Python", "OpenAI API"],
-    github: "https://github.com/yourrepo/ai-quiz-generator",
-    demo: "https://aiquiztool.com",
+    technologies: ["ExpressJS", "PostGreSQL", "Prisma", "TailwindCSS", "Cloudinary"],
+    github: "https://github.com/HarryAhnHS/file-storage",
+    demo: "https://file-storage-production.up.railway.app/",
   },
   {
     title: "Portfolio Website",
     href: "https://yourportfolio.com",
     description: "A sleek, interactive portfolio website with GSAP animations.",
-    image: Demo,
+    image: Flexor,
     imageAlt: "Personal portfolio website",
     technologies: ["React", "Next.js", "GSAP", "TailwindCSS"],
-    github: "https://github.com/yourrepo/portfolio",
+    github: "https://github.com/HarryAhnHS/v3",
     demo: "https://yourportfolio.com",
   },
 ];

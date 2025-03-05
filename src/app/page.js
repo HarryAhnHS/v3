@@ -55,12 +55,20 @@ export default function Home() {
             <li>🔹 completed <b>The Odin Project</b>, a comprehensive coding bootcamp in full-stack JS.</li>
             <li>🔹 created a <b>fully-functional </b> for fun (and extra credit!).</li>
           </ul>
+          {/* Project Nav */}
+          <div className="fade-in mt-12">
+          <Link href="/projects">
+            <span className="px-6 py-3 rounded-lg border-2 border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 transition-all hover:bg-gray-800 hover:text-white dark:hover:bg-gray-700">
+              See My Projects →
+            </span>
+          </Link>
+        </div>
         </li>
         {/* Fun Facts */}
         <li className="fade-in mt-10 w-full">
-          <h3 className="italic text-gray-700 dark:text-gray-200">did you know:</h3>
+          <h3 className="italic text-gray-700 dark:text-gray-200">did you know?</h3>
           <ul className="mt-2 space-y-2">
-            <li>🌎 lived in Korea, France, Singapore, Hong Kong, and the UK.</li>
+            <li>🌎 i lived in Korea, France, Singapore, Hong Kong, and the UK.</li>
             <li>🎭 i changed my major every year since started university.</li>
             <li>☕ iced coffee is my blood type (얼죽아).</li>
           </ul>
@@ -76,15 +84,7 @@ export default function Home() {
       
 
       
-
-      {/* Navigation */}
-      <div className="fade-in mt-12">
-        <Link href="/projects">
-          <span className="px-6 py-3 rounded-lg border-2 border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 transition-all hover:bg-gray-800 hover:text-white dark:hover:bg-gray-700">
-            See My Projects →
-          </span>
-        </Link>
-      </div>
+      
     </div>
   );
 }
