@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Me from "@/app/assets/me.jpeg";
+import SkillGraph from "./components/SkillGraph";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,14 +74,16 @@ export default function Home() {
             <li>☕ iced coffee is my blood type (얼죽아).</li>
           </ul>
         </li>
-        {/* Skills and Frameworks */}
-        <li className="fade-in mt-10 w-full">
-          <h3 className="italic text-gray-700 dark:text-gray-200">skills:</h3>
-          <ul className="mt-2 space-y-2">
-
-          </ul>
-        </li>
       </ul>
+
+      {/* Skills and Frameworks */}
+      <div className="fade-in mt-10 w-full">
+          <h3 className="italic text-gray-700 dark:text-gray-200">skills:</h3>
+          <div className="w-full h-[600px] space-y-2 border flex items-center justify-center">
+            {/* Node graph using d3js */}
+              <SkillGraph />
+          </div>
+      </div>
       
 
       

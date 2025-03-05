@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { useTheme } from "./ThemeProvider";
-import { Handshake, Heart, Moon, Sun } from "lucide-react";
+import { Clapperboard, Hand, Handshake, Heart, Moon, Sun } from "lucide-react";
 
 
 export default function Header() {
@@ -36,9 +36,12 @@ export default function Header() {
 
             <div className="flex items-center gap-2">
                 <div className="relative gap-1 ">
-                    <button onClick={handleClap} className="flex items-center cursor-pointer gap-1 hover:text-gray-600 dark:hover:text-gray-300 transition-transform duration-300 hover:scale-110">
-                        <Handshake className="h-4 w-4" />
-                        <span className="font-semibold text-sm">{ claps }</span>
+                    <button onClick={handleClap} className="relative flex items-center cursor-pointer hover:text-gray-600 dark:hover:text-gray-300 transition-transform duration-300 hover:scale-110">
+                        <span className="absolute bottom-5 text-[10px] text-nowrap">high five!</span>
+                        <div className="flex items-center gap-1">
+                            <Hand className="h-4 w-4" />
+                            <span className="font-semibold text-sm">{ claps }</span>
+                        </div>
                     </button>
                 </div>
                 <button onClick={toggleTheme}
