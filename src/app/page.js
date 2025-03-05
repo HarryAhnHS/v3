@@ -39,8 +39,8 @@ export default function Home() {
       <ul>
         {/* Current */}
         <li className="fade-in mt-10 w-full">
-          <h3 className="font-italic text-gray-700 dark:text-gray-300">currently, I am:</h3>
-          <ul className="mt-2 text-gray-600 dark:text-gray-400 space-y-2">
+          <h3 className="italic text-gray-700 dark:text-gray-200">currently, I am:</h3>
+          <ul className="mt-2 space-y-2">
             <li>📚 studying BS/MS in CS @ USC Viterbi School of Engineering</li>
             <li>🚀 building at <b>LavaLab</b>, USC’s premier startup incubator.</li>
             <li>💻 developing at <b>USC University Advancement</b>.</li>
@@ -49,8 +49,8 @@ export default function Home() {
         </li>
         {/* History */}
         <li className="fade-in mt-10 w-full">
-          <h3 className="font-italic text-gray-700 dark:text-gray-300">recently, I:</h3>
-          <ul className="mt-2 text-gray-600 dark:text-gray-400 space-y-2">
+          <h3 className="italic text-gray-700 dark:text-gray-200">recently, I:</h3>
+          <ul className="mt-2 space-y-2">
             <li>🔹 interned as SWE at <b>Qraft Technologies</b>, a fintech startup.</li>
             <li>🔹 completed <b>The Odin Project</b>, a comprehensive coding bootcamp in full-stack JS.</li>
             <li>🔹 created a <b>fully-functional </b> for fun (and extra credit!).</li>
@@ -58,8 +58,8 @@ export default function Home() {
         </li>
         {/* Fun Facts */}
         <li className="fade-in mt-10 w-full">
-          <h3 className="font-italic text-gray-700 dark:text-gray-300">did you know:</h3>
-          <ul className="mt-2 text-gray-600 dark:text-gray-400 space-y-2">
+          <h3 className="italic text-gray-700 dark:text-gray-200">did you know:</h3>
+          <ul className="mt-2 space-y-2">
             <li>🌎 lived in Korea, France, Singapore, Hong Kong, and the UK.</li>
             <li>🎭 i changed my major every year since started university.</li>
             <li>☕ iced coffee is my blood type (얼죽아).</li>
@@ -67,8 +67,8 @@ export default function Home() {
         </li>
         {/* Skills and Frameworks */}
         <li className="fade-in mt-10 w-full">
-          <h3 className="font-italic text-gray-700 dark:text-gray-300">skills:</h3>
-          <ul className="mt-2 text-gray-600 dark:text-gray-400 space-y-2">
+          <h3 className="italic text-gray-700 dark:text-gray-200">skills:</h3>
+          <ul className="mt-2 space-y-2">
 
           </ul>
         </li>

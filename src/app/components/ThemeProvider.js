@@ -40,7 +40,8 @@ export default function ThemeProvider({ children }) {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark');
+    document.documentElement.classList.toggle("dark");
+
   };
 
   return (
