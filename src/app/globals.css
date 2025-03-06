@@ -28,4 +28,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Default state - hide the tech node labels */
+.tech-node-label {
+  display: none;
+}
+
+/* Mobile screen: show the tech node labels */
+@media (max-width: 768px) {
+  .tech-node-label {
+    display: block;  /* Make the label visible on mobile */
+  }
+}
+
 

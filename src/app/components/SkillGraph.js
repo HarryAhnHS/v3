@@ -4,10 +4,13 @@ import ReactDOM from "react-dom/client";
 import * as d3 from "d3";
 
 import { FaReact, FaNodeJs, FaGit } from "react-icons/fa";
-import { SiExpress, SiPostgresql, SiFirebase, SiSwift, SiFlutter, SiCplusplus, SiPython, SiSelenium } from "react-icons/si";
+import { SiExpress, SiPostgresql, SiFirebase, SiSwift, SiFlutter, SiCplusplus, SiPython, SiSelenium, SiRailway } from "react-icons/si";
 import { TbBrandNextjs, TbBrandMongodb } from "react-icons/tb";
-import { DiJava, DiDocker } from "react-icons/di";
+import { DiJava, DiDocker, DiHeroku } from "react-icons/di";
 import { MdJavascript } from "react-icons/md";
+import { RiSupabaseLine } from "react-icons/ri";
+import { TbBrandPrisma } from "react-icons/tb";
+
 
 import { useTheme } from "./ThemeProvider";
 
@@ -48,7 +51,11 @@ const SkillGraph = () => {
       "Docker": DiDocker,
       "Selenium": SiSelenium,
       "MongoDB": TbBrandMongodb,
-      "NextJS": TbBrandNextjs
+      "NextJS": TbBrandNextjs,
+      "Supabase": RiSupabaseLine,
+      "Railway": SiRailway,
+      "Heroku": DiHeroku,
+      "Prisma": TbBrandPrisma
     };
 
     // Nodes including the new DevOps, Database, and Frontend entries
@@ -68,6 +75,7 @@ const SkillGraph = () => {
       { id: "Git", group: "tech" },
       { id: "Docker", group: "tech" },
       { id: "Selenium", group: "tech" },
+      { id: "Railway", group: "tech" },
       { id: "Language", group: "category" },
       { id: "C++", group: "tech" },
       { id: "Python", group: "tech" },
@@ -75,6 +83,8 @@ const SkillGraph = () => {
       { id: "SwiftUI", group: "tech" },
       { id: "Flutter", group: "tech" },
       { id: "Java", group: "tech" },
+      { id: "Supabase", group: "tech" },
+      { id: "Prisma", group: "tech" },
     ];
 
     // Links including new connections between tools and languages
@@ -85,15 +95,18 @@ const SkillGraph = () => {
       { source: "Me", target: "DevOps" },
       { source: "Me", target: "Language" },
       { source: "Frontend", target: "React" },
-      { source: "Frontend", target: "NextJS" }, // Link Next.js with Frontend
+      { source: "Frontend", target: "NextJS" },
       { source: "Backend", target: "Node.js" },
       { source: "Backend", target: "Express" },
       { source: "Database", target: "Firebase" },
       { source: "Database", target: "PostGreSQL" },
-      { source: "Database", target: "MongoDB" }, // MongoDB under Database
-      { source: "DevOps", target: "Git" }, // Git in DevOps
-      { source: "DevOps", target: "Docker" }, // Docker in DevOps
-      { source: "DevOps", target: "Selenium" }, // Selenium in DevOps
+      { source: "Database", target: "MongoDB" },
+      { source: "Database", target: "Prisma" },
+      { source: "DevOps", target: "Git" }, 
+      { source: "DevOps", target: "Docker" }, 
+      { source: "DevOps", target: "Selenium" }, 
+      { source: "DevOps", target: "Supabase" }, 
+      { source: "DevOps", target: "Railway" }, 
       { source: "Language", target: "C++" },
       { source: "Language", target: "Python" },
       { source: "Language", target: "JavaScript" },
@@ -103,7 +116,7 @@ const SkillGraph = () => {
     ];
 
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.id).distance(80))
+      .force("link", d3.forceLink(links).id(d => d.id).distance(75))
       .force("charge", d3.forceManyBody().strength(-300))
       .force("center", d3.forceCenter(gWidth / 2, gHeight / 2));
 
@@ -144,18 +157,20 @@ const SkillGraph = () => {
         root.render(React.createElement(techIcons[d.id], { size: "30px", color: theme === "dark" ? "#fff" : "#333" }));
       });
 
-    // Adjusting label text positioning above the tech node rectangles
+    // Adjusting label text
     const techText = g.append("g")
       .selectAll("text")
       .data(nodes.filter(d => d.group === "tech"))
       .enter()
       .append("text")
       .text(d => d.id)
-      .attr("font-size", "12px")
+      .attr("font-size", "10px")
       .attr("fill", theme === "dark" ? "#fff" : "#333") // Text color for tech nodes
       .attr("x", d => d.x)
-      .attr("y", d => d.y) // Positioning the text above the rectangle with some space
-      .attr("text-anchor", "middle");
+      .attr("y", d => d.y + 20)
+      .attr("text-anchor", "middle")
+      .attr("class", "tech-node-label");  // Add class for mobile visibility
+
 
     const node = g.append("g")
       .selectAll("circle")
@@ -240,11 +255,11 @@ const SkillGraph = () => {
 
       text
         .attr("x", d => d.x)
-        .attr("y", d => d.y + 30);
+        .attr("y", d => d.y + 20);
 
       techText
         .attr("x", d => d.x)
-        .attr("y", d => d.y - 30); // Adjusting the tech node text position to be above the node
+        .attr("y", d => d.y + 35); // Adjusting the tech node text position to be above the node
     });
 
     const resizeHandler = () => {

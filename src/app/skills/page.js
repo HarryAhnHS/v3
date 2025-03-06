@@ -20,7 +20,7 @@ export default function Skills() {
         <div className="relative flex items-center justify-center w-full px-0"> {/* Ensure full width */}
             <div className="fade-in w-full gap-2">
                 <h3 className="italic text-gray-700 dark:text-gray-200 mb-2">
-                    check out my tech stack:
+                    check out my most comfortable tech stack:
                 </h3>
                 
                 <div className="w-full h-[700px] space-y-2 flex items-center justify-center rounded-sm bg-neutral-300/20 dark:bg-neutral-800/20">
