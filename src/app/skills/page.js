@@ -23,7 +23,7 @@ export default function Skills() {
                     check out my tech stack:
                 </h3>
                 
-                <div className="w-full h-[700px] space-y-2 flex items-center justify-center rounded-sm border border-neutral-300 dark:border-neutral-800">
+                <div className="w-full h-[700px] space-y-2 flex items-center justify-center rounded-sm bg-neutral-300/20 dark:bg-neutral-800/20">
                     {/* Node graph using d3js */}
                     <SkillGraph />
                 </div>
