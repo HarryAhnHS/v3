@@ -5,12 +5,12 @@ export default function Footer() {
     { name: "GitHub", href: "https://github.com/HarryAhnHS", icon: Github },
     { name: "LinkedIn", href: "https://www.linkedin.com/in/hongsuh-ahn-b7520a188/", icon: Linkedin },
     { name: "Email", href: "mailto:harryahn@usc.edu", icon: Mail },
-    { name: "Resume", href: "https://yourresume.com", icon: FileText }, // Added Resume link
+    { name: "Resume", href: "/resume.pdf", icon: FileText },
     { name: "Source Code", href: "https://github.com/HarryAhnHS/v3", icon: Code }
   ];
 
   return (
-    <footer className="flex flex-col gap-4 text-sm">
+    <footer className="flex flex-col gap-4 text-sm px-3 sm:px-0">
       <hr className="border-t border-neutral-500 dark:border-neutral-400" />
       <div className="flex flex-wrap justify-between gap-4">
         <div className="flex flex-wrap gap-3">

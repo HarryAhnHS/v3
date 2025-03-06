@@ -35,14 +35,14 @@ const projects = [
       demo: "https://file-storage-production.up.railway.app/",
     },
     {
-      title: "Portfolio Website",
-      href: "https://yourportfolio.com",
+      title: "Personal Landing Page",
+      href: "/",
       description: "A sleek, interactive portfolio website with GSAP animations.",
       image: V3,
       imageAlt: "Personal portfolio website",
       technologies: ["React", "Next.js", "GSAP", "TailwindCSS"],
       github: "https://github.com/HarryAhnHS/v3",
-      demo: "https://yourportfolio.com",
+      demo: "/",
     },
     {
       title: "ResumeGenerator",
