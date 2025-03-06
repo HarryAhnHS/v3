@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import * as d3 from "d3";
 import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
-import { SiExpress, SiPostgresql, SiFirebase } from "react-icons/si";
+import { SiExpress, SiPostgresql, SiFirebase, SiSwift, SiFlutter, SiCplusplus, SiPython, SiDocker, SiSelenium, SiReact } from "react-icons/si";
 import { useTheme } from "./ThemeProvider";
 
 const SkillGraph = () => {
@@ -26,41 +26,77 @@ const SkillGraph = () => {
     const gHeight = height * 1.1;
     svg.attr("viewBox", `0 0 ${gWidth} ${gHeight}`);
 
-    const techIcons = {
-      "React": FaReact,
-      "Node.js": FaNodeJs,
-      "Express": SiExpress,
-      "Firebase": SiFirebase,
-      "PostGreSQL": SiPostgresql
-    };
+    // techIcons including languages, frameworks, and additional tools
+const techIcons = {
+  "React": FaReact,
+  "Node.js": FaNodeJs,
+  "Express": SiExpress,
+  "Firebase": SiFirebase,
+  "PostGreSQL": SiPostgresql,
+  "C++": SiCplusplus,
+  "Python": SiPython,
+  "JavaScript": FaDatabase, // Find new
+  "SwiftUI": SiSwift,
+  "Flutter": SiFlutter,
+  "Git": FaDatabase, // Find new
+  "Docker": SiDocker,
+  "Selenium": SiSelenium,
+  "MongoDB": SiPostgresql, // Find new
+  "NextJS": SiReact // Find new
+};
 
-    const nodes = [
-      { id: "Me", group: "root" },
-      { id: "Frontend", group: "category" },
-      { id: "React", group: "tech" },
-      { id: "Backend", group: "category" },
-      { id: "Node.js", group: "tech" },
-      { id: "Express", group: "tech" },
-      { id: "Database", group: "category" },
-      { id: "Firebase", group: "tech" },
-      { id: "PostGreSQL", group: "tech" },
-      { id: "DevOps", group: "category" }
-    ];
+// Nodes including the new DevOps, Database, and Frontend entries
+const nodes = [
+  { id: "Me", group: "root" },
+  { id: "Frontend", group: "category" },
+  { id: "React", group: "tech" },
+  { id: "NextJS", group: "tech" },
+  { id: "Backend", group: "category" },
+  { id: "Node.js", group: "tech" },
+  { id: "Express", group: "tech" },
+  { id: "Database", group: "category" },
+  { id: "Firebase", group: "tech" },
+  { id: "PostGreSQL", group: "tech" },
+  { id: "MongoDB", group: "tech" },
+  { id: "DevOps", group: "category" },
+  { id: "Git", group: "tech" },
+  { id: "Docker", group: "tech" },
+  { id: "Selenium", group: "tech" },
+  { id: "Language", group: "category" },
+  { id: "C++", group: "tech" },
+  { id: "Python", group: "tech" },
+  { id: "JavaScript", group: "tech" },
+  { id: "SwiftUI", group: "tech" },
+  { id: "Flutter", group: "tech" },
+];
 
-    const links = [
-      { source: "Me", target: "Frontend" },
-      { source: "Me", target: "Backend" },
-      { source: "Me", target: "Database" },
-      { source: "Me", target: "DevOps" },
-      { source: "Frontend", target: "React" },
-      { source: "Backend", target: "Node.js" },
-      { source: "Backend", target: "Express" },
-      { source: "Database", target: "Firebase" },
-      { source: "Database", target: "PostGreSQL" }
-    ];
+// Links including new connections between tools and languages
+const links = [
+  { source: "Me", target: "Frontend" },
+  { source: "Me", target: "Backend" },
+  { source: "Me", target: "Database" },
+  { source: "Me", target: "DevOps" },
+  { source: "Me", target: "Language" },
+  { source: "Frontend", target: "React" },
+  { source: "Frontend", target: "NextJS" }, // Link Next.js with Frontend
+  { source: "Backend", target: "Node.js" },
+  { source: "Backend", target: "Express" },
+  { source: "Database", target: "Firebase" },
+  { source: "Database", target: "PostGreSQL" },
+  { source: "Database", target: "MongoDB" }, // MongoDB under Database
+  { source: "DevOps", target: "Git" }, // Git in DevOps
+  { source: "DevOps", target: "Docker" }, // Docker in DevOps
+  { source: "DevOps", target: "Selenium" }, // Selenium in DevOps
+  { source: "Language", target: "C++" },
+  { source: "Language", target: "Python" },
+  { source: "Language", target: "JavaScript" },
+  { source: "Language", target: "SwiftUI" },
+  { source: "Language", target: "Flutter" },
+];
+
 
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.id).distance(100))
+      .force("link", d3.forceLink(links).id(d => d.id).distance(80))
       .force("charge", d3.forceManyBody().strength(-300))
       .force("center", d3.forceCenter(gWidth / 2, gHeight / 2));
 
@@ -104,7 +140,7 @@ const SkillGraph = () => {
       .data(nodes.filter(d => d.group === "root" || d.group === "category"))
       .enter()
       .append("circle")
-      .attr("r", d => d.group === "root" ? 6 : 2)
+      .attr("r", d => d.group === "root" ? 6 : 4)
       .attr("fill", theme === "dark" ? "#555" : "#222") // Darker node color for dark theme
       .attr("stroke", theme === "dark" ? "#fff" : "#333" )
       .attr("stroke-width", 2);
