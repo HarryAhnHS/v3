@@ -1,155 +1,225 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { React as ReactIcon, JavaScript, NodeJs, ExpressJsLight, MongoDB, PostgreSQL } from "developer-icons";
+import ReactDOM from "react-dom/client";
 import * as d3 from "d3";
+import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import { SiExpress, SiPostgresql, SiFirebase } from "react-icons/si";
+import { useTheme } from "./ThemeProvider";
 
 const SkillGraph = () => {
   const svgRef = useRef(null);
+  const gRef = useRef(null);
+  const { theme } = useTheme(); // Accessing the theme from the context
 
   useEffect(() => {
-    const width = window.innerWidth * 0.9;
-    const height = 600;
+    if (!svgRef.current) return;
+
+    const svg = d3.select(svgRef.current);
+    const g = d3.select(gRef.current);
+
+    // Clear previous before changing
+    g.selectAll("*").remove()
+
+    // Get actual SVG size
+    const { width, height } = svgRef.current.getBoundingClientRect();
+    const gWidth = width * 1.1;
+    const gHeight = height * 1.1;
+    svg.attr("viewBox", `0 0 ${gWidth} ${gHeight}`);
 
     const techIcons = {
-      "React": ReactIcon,
-      "JavaScript": JavaScript,
-      "Node.js": NodeJs,
-      "Express": ExpressJsLight,
-      "MongoDB": MongoDB,
-      "PostGreSQL": PostgreSQL
+      "React": FaReact,
+      "Node.js": FaNodeJs,
+      "Express": SiExpress,
+      "Firebase": SiFirebase,
+      "PostGreSQL": SiPostgresql
     };
 
     const nodes = [
-      { id: "Harry", group: "root" },
+      { id: "Me", group: "root" },
       { id: "Frontend", group: "category" },
       { id: "React", group: "tech" },
-      { id: "JavaScript", group: "tech" },
       { id: "Backend", group: "category" },
       { id: "Node.js", group: "tech" },
       { id: "Express", group: "tech" },
       { id: "Database", group: "category" },
-      { id: "MongoDB", group: "tech" },
+      { id: "Firebase", group: "tech" },
       { id: "PostGreSQL", group: "tech" },
       { id: "DevOps", group: "category" }
     ];
 
     const links = [
-      { source: "Harry", target: "Frontend" },
-      { source: "Harry", target: "Backend" },
-      { source: "Harry", target: "Database" },
-      { source: "Harry", target: "DevOps" },
+      { source: "Me", target: "Frontend" },
+      { source: "Me", target: "Backend" },
+      { source: "Me", target: "Database" },
+      { source: "Me", target: "DevOps" },
       { source: "Frontend", target: "React" },
-      { source: "Frontend", target: "JavaScript" },
       { source: "Backend", target: "Node.js" },
       { source: "Backend", target: "Express" },
-      { source: "Database", target: "MongoDB" },
+      { source: "Database", target: "Firebase" },
       { source: "Database", target: "PostGreSQL" }
     ];
 
-    const svg = d3.select(svgRef.current)
-      .attr("width", "100%")
-      .attr("height", "100%")
-      .attr("viewBox", `0 0 ${width} ${height}`)
-      .attr("preserveAspectRatio", "xMidYMid meet");
-
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.id).distance(150))
-      .force("charge", d3.forceManyBody().strength(-400))
-      .force("center", d3.forceCenter(width / 2, height / 2));
+      .force("link", d3.forceLink(links).id(d => d.id).distance(100))
+      .force("charge", d3.forceManyBody().strength(-300))
+      .force("center", d3.forceCenter(gWidth / 2, gHeight / 2));
 
-    const link = svg.append("g")
+    // Append links, nodes, and text to the same <g> element
+    const link = g.append("g")
+      .attr("stroke", "#aaa")
+      .attr("stroke-width", 2)
       .selectAll("line")
       .data(links)
       .enter()
-      .append("line")
-      .attr("stroke", "#999")
-      .attr("stroke-opacity", 0.6)
-      .attr("stroke-width", 2);
+      .append("line");
 
-    const node = svg.append("g")
-      .selectAll("g")
-      .data(nodes)
+    const nodeBackgrounds = g.append("g")
+      .selectAll("rect")
+      .data(nodes.filter(d => d.group === "tech"))
       .enter()
-      .append("g")
-      .call(d3.drag()
-        .on("start", (event, d) => {
-          if (!event.active) simulation.alphaTarget(0.3).restart();
-          d.fx = d.x;
-          d.fy = d.y;
-        })
-        .on("drag", (event, d) => {
-          d.fx = event.x;
-          d.fy = event.y;
-        })
-        .on("end", (event, d) => {
-          if (!event.active) simulation.alphaTarget(0);
-          d.fx = null;
-          d.fy = null;
-        })
-      );
-
-    // Add different styles based on node type
-    node.append("circle")
-      .attr("r", d => d.group === "root" ? 40 : d.group === "category" ? 30 : 0) // No circle for tech nodes
-      .attr("fill", d => d.group === "root" ? "#ffffff" : d.group === "category" ? "#ff5733" : "none")
-      .attr("stroke", d => d.group === "root" ? "#000000" : d.group === "category" ? "#ffffff" : "none")
-      .attr("stroke-width", d => d.group === "root" ? 2 : 0);
-
-    // Append React components for tech icons
-    const techNodes = node.filter(d => techIcons[d.id]);
-
-    techNodes.append("foreignObject")
-      .attr("x", -20)
-      .attr("y", -20)
+      .append("rect")
       .attr("width", 40)
       .attr("height", 40)
-      .html(d => 
-          `<div>
-            ${techIcons[d.id]}
-          </div>`
-      );
-      
+      .attr("rx", 10)
+      .attr("fill", theme === "dark" ? "#444" : "#ddd") // Lighter background for dark theme
+      .attr("stroke", theme === "dark" ? "#888" : "#333") // Darker border for light theme
+      .attr("stroke-width", 2);
 
-    // Add text labels for all nodes
-    node.append("text")
+    const techNodes = g.append("g")
+      .selectAll("foreignObject")
+      .data(nodes.filter(d => d.group === "tech"))
+      .enter()
+      .append("foreignObject")
+      .attr("x", -15)
+      .attr("y", -15)
+      .attr("width", 30)
+      .attr("height", 30)
+      .each(function(d) {
+        const root = ReactDOM.createRoot(this);
+        root.render(React.createElement(techIcons[d.id], { size: "30px", color: theme === "dark" ? "#fff" : "#333" }));
+    });
+
+    const node = g.append("g")
+      .selectAll("circle")
+      .data(nodes.filter(d => d.group === "root" || d.group === "category"))
+      .enter()
+      .append("circle")
+      .attr("r", d => d.group === "root" ? 6 : 2)
+      .attr("fill", theme === "dark" ? "#555" : "#222") // Darker node color for dark theme
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 2);
+
+    const text = g.append("g")
+      .selectAll("text")
+      .data(nodes.filter(d => d.group === "root" || d.group === "category"))
+      .enter()
+      .append("text")
       .text(d => d.id)
-      .attr("x", 0)
-      .attr("y", d => d.group === "tech" ? 45 : 5) // Adjust position for tech labels
       .attr("font-size", "14px")
-      .attr("text-anchor", "middle")
-      .attr("fill", d => d.group === "root" ? "#000000" : "#ffffff");
+      .attr("fill", theme === "dark" ? "#ccc" : "#333") // Lighter text for dark theme
+      .attr("text-anchor", "middle");
 
-    // // Tooltip
-    // const tooltip = d3.select("body")
-    //   .append("div")
-    //   .style("position", "absolute")
-    //   .style("font-size", "10px")
-    //   .style("padding", "4px")
-    //   .style("background", "#333")
-    //   .style("color", "white")
-    //   .style("border-radius", "5px")
-    //   .style("opacity", 0);
+    const techText = g.append("g")
+      .selectAll("text")
+      .data(nodes.filter(d => d.group === "tech"))
+      .enter()
+      .append("text")
+      .text(d => d.id)
+      .attr("font-size", "12px")
+      .attr("fill", theme === "dark" ? "#fff" : "#333") // Text color for tech nodes
+      .attr("x", d => d.x)
+      .attr("y", d => d.y + 25) // Positioning the text below the rectangle with some space
+      .attr("text-anchor", "middle");
 
-    // node.on("mouseover", (event, d) => {
-    //   tooltip.style("opacity", 1)
-    //     .html(`<strong>${d.id}</strong>`)
-    //     .style("left", `${event.pageX + 10}px`)
-    //     .style("top", `${event.pageY}px`);
-    // })
-    //   .on("mouseout", () => tooltip.style("opacity", 0));
+    const drag = d3.drag()
+      .on("start", (event, d) => {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      })
+      .on("drag", (event, d) => {
+        d.fx = event.x;
+        d.fy = event.y;
+      })
+      .on("end", (event, d) => {
+        if (!event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+      });
+
+    node.call(drag);
+    techNodes.call(drag);
+    nodeBackgrounds.call(drag);
+
+    // Tooltip
+    const tooltip = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("position", "absolute")
+      .style("visibility", "hidden")
+      .style("background", "#222")
+      .style("color", "#fff")
+      .style("padding", "5px 10px")
+      .style("border-radius", "5px");
+
+    techNodes
+      .on("mouseover", (event, d) => {
+        tooltip.style("visibility", "visible").text(d.id);
+      })
+      .on("mousemove", (event) => {
+        tooltip.style("top", `${event.pageY - 10}px`).style("left", `${event.pageX + 10}px`);
+      })
+      .on("mouseout", () => {
+        tooltip.style("visibility", "hidden");
+      });
 
     simulation.on("tick", () => {
-      link.attr("x1", d => d.source.x)
+      link
+        .attr("x1", d => d.source.x)
         .attr("y1", d => d.source.y)
         .attr("x2", d => d.target.x)
         .attr("y2", d => d.target.y);
 
-      node.attr("transform", d => `translate(${d.x}, ${d.y})`);
+      node
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y);
+
+      nodeBackgrounds
+        .attr("x", d => d.x - 20)
+        .attr("y", d => d.y - 20);
+
+      techNodes
+        .attr("x", d => d.x - 15)
+        .attr("y", d => d.y - 15);
+
+      text
+        .attr("x", d => d.x)
+        .attr("y", d => d.y + 30);
+
+      techText
+        .attr("x", d => d.x)
+        .attr("y", d => d.y + 40); // Adjusting the tech node text position
     });
 
-  }, []);
+    const resizeHandler = () => {
+      const { width, height } = svgRef.current.getBoundingClientRect();
+      const gWidth = width * 1.1;
+      const gHeight = height * 1.1;
+      svg.attr("viewBox", `0 0 ${gWidth} ${gHeight}`);
+      simulation.force("center", d3.forceCenter(gWidth / 2, gHeight / 2)).alpha(1).restart();
+    };
 
-  return <svg ref={svgRef}></svg>;
+    window.addEventListener("resize", resizeHandler);
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+      tooltip.remove();
+    };
+  }, [theme]);
+
+  return (
+    <svg ref={svgRef} width="100%" height="100%">
+      <g ref={gRef} />
+    </svg>
+  );
 };
 
 export default SkillGraph;
