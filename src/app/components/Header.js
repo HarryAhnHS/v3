@@ -28,7 +28,7 @@ export default function Header() {
     };
 
     return (
-        <header className="px-3 sm:px-6 py-2 flex justify-between items-center border-b border-neutral-500 dark:border-neutral-400 ">
+        <header className="px-3 sm:px-6 py-2 flex justify-between items-center">
             <LinkButton href="/" isNextLink={true} className="text-base sm:text-lg font-normal">
                 HarryAhn
             </LinkButton>
