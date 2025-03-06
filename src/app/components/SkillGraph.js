@@ -2,8 +2,13 @@
 import React, { useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import * as d3 from "d3";
-import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
-import { SiExpress, SiPostgresql, SiFirebase, SiSwift, SiFlutter, SiCplusplus, SiPython, SiDocker, SiSelenium, SiReact } from "react-icons/si";
+
+import { FaReact, FaNodeJs, FaGit } from "react-icons/fa";
+import { SiExpress, SiPostgresql, SiFirebase, SiSwift, SiFlutter, SiCplusplus, SiPython, SiSelenium } from "react-icons/si";
+import { TbBrandNextjs, TbBrandMongodb } from "react-icons/tb";
+import { DiJava, DiDocker } from "react-icons/di";
+import { MdJavascript } from "react-icons/md";
+
 import { useTheme } from "./ThemeProvider";
 
 const SkillGraph = () => {
@@ -27,73 +32,75 @@ const SkillGraph = () => {
     svg.attr("viewBox", `0 0 ${gWidth} ${gHeight}`);
 
     // techIcons including languages, frameworks, and additional tools
-const techIcons = {
-  "React": FaReact,
-  "Node.js": FaNodeJs,
-  "Express": SiExpress,
-  "Firebase": SiFirebase,
-  "PostGreSQL": SiPostgresql,
-  "C++": SiCplusplus,
-  "Python": SiPython,
-  "JavaScript": FaDatabase, // Find new
-  "SwiftUI": SiSwift,
-  "Flutter": SiFlutter,
-  "Git": FaDatabase, // Find new
-  "Docker": SiDocker,
-  "Selenium": SiSelenium,
-  "MongoDB": SiPostgresql, // Find new
-  "NextJS": SiReact // Find new
-};
+    const techIcons = {
+      "React": FaReact,
+      "Node.js": FaNodeJs,
+      "Express": SiExpress,
+      "Firebase": SiFirebase,
+      "PostGreSQL": SiPostgresql,
+      "C++": SiCplusplus,
+      "Python": SiPython,
+      "JavaScript": MdJavascript,
+      "Java": DiJava,
+      "SwiftUI": SiSwift,
+      "Flutter": SiFlutter,
+      "Git": FaGit,
+      "Docker": DiDocker,
+      "Selenium": SiSelenium,
+      "MongoDB": TbBrandMongodb,
+      "NextJS": TbBrandNextjs
+    };
 
-// Nodes including the new DevOps, Database, and Frontend entries
-const nodes = [
-  { id: "Me", group: "root" },
-  { id: "Frontend", group: "category" },
-  { id: "React", group: "tech" },
-  { id: "NextJS", group: "tech" },
-  { id: "Backend", group: "category" },
-  { id: "Node.js", group: "tech" },
-  { id: "Express", group: "tech" },
-  { id: "Database", group: "category" },
-  { id: "Firebase", group: "tech" },
-  { id: "PostGreSQL", group: "tech" },
-  { id: "MongoDB", group: "tech" },
-  { id: "DevOps", group: "category" },
-  { id: "Git", group: "tech" },
-  { id: "Docker", group: "tech" },
-  { id: "Selenium", group: "tech" },
-  { id: "Language", group: "category" },
-  { id: "C++", group: "tech" },
-  { id: "Python", group: "tech" },
-  { id: "JavaScript", group: "tech" },
-  { id: "SwiftUI", group: "tech" },
-  { id: "Flutter", group: "tech" },
-];
+    // Nodes including the new DevOps, Database, and Frontend entries
+    const nodes = [
+      { id: "Me", group: "root" },
+      { id: "Frontend", group: "category" },
+      { id: "React", group: "tech" },
+      { id: "NextJS", group: "tech" },
+      { id: "Backend", group: "category" },
+      { id: "Node.js", group: "tech" },
+      { id: "Express", group: "tech" },
+      { id: "Database", group: "category" },
+      { id: "Firebase", group: "tech" },
+      { id: "PostGreSQL", group: "tech" },
+      { id: "MongoDB", group: "tech" },
+      { id: "DevOps", group: "category" },
+      { id: "Git", group: "tech" },
+      { id: "Docker", group: "tech" },
+      { id: "Selenium", group: "tech" },
+      { id: "Language", group: "category" },
+      { id: "C++", group: "tech" },
+      { id: "Python", group: "tech" },
+      { id: "JavaScript", group: "tech" },
+      { id: "SwiftUI", group: "tech" },
+      { id: "Flutter", group: "tech" },
+      { id: "Java", group: "tech" },
+    ];
 
-// Links including new connections between tools and languages
-const links = [
-  { source: "Me", target: "Frontend" },
-  { source: "Me", target: "Backend" },
-  { source: "Me", target: "Database" },
-  { source: "Me", target: "DevOps" },
-  { source: "Me", target: "Language" },
-  { source: "Frontend", target: "React" },
-  { source: "Frontend", target: "NextJS" }, // Link Next.js with Frontend
-  { source: "Backend", target: "Node.js" },
-  { source: "Backend", target: "Express" },
-  { source: "Database", target: "Firebase" },
-  { source: "Database", target: "PostGreSQL" },
-  { source: "Database", target: "MongoDB" }, // MongoDB under Database
-  { source: "DevOps", target: "Git" }, // Git in DevOps
-  { source: "DevOps", target: "Docker" }, // Docker in DevOps
-  { source: "DevOps", target: "Selenium" }, // Selenium in DevOps
-  { source: "Language", target: "C++" },
-  { source: "Language", target: "Python" },
-  { source: "Language", target: "JavaScript" },
-  { source: "Language", target: "SwiftUI" },
-  { source: "Language", target: "Flutter" },
-];
-
+    // Links including new connections between tools and languages
+    const links = [
+      { source: "Me", target: "Frontend" },
+      { source: "Me", target: "Backend" },
+      { source: "Me", target: "Database" },
+      { source: "Me", target: "DevOps" },
+      { source: "Me", target: "Language" },
+      { source: "Frontend", target: "React" },
+      { source: "Frontend", target: "NextJS" }, // Link Next.js with Frontend
+      { source: "Backend", target: "Node.js" },
+      { source: "Backend", target: "Express" },
+      { source: "Database", target: "Firebase" },
+      { source: "Database", target: "PostGreSQL" },
+      { source: "Database", target: "MongoDB" }, // MongoDB under Database
+      { source: "DevOps", target: "Git" }, // Git in DevOps
+      { source: "DevOps", target: "Docker" }, // Docker in DevOps
+      { source: "DevOps", target: "Selenium" }, // Selenium in DevOps
+      { source: "Language", target: "C++" },
+      { source: "Language", target: "Python" },
+      { source: "Language", target: "JavaScript" },
+      { source: "Language", target: "SwiftUI" },
+      { source: "Language", target: "Flutter" },
+      { source: "Language", target: "Java" },
+    ];
 
     const simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id).distance(80))
@@ -118,8 +125,8 @@ const links = [
       .attr("height", 40)
       .attr("rx", 10)
       .attr("fill", theme === "dark" ? "#444" : "#eee") // Lighter background for dark theme
-      .attr("stroke", theme === "dark" ? "#888" : "#333") // Darker border for light theme
-      .attr("stroke-width", 2);
+      .attr("stroke", theme === "dark" ? "#888" : "#222") // Darker border for light theme
+      .attr("stroke-width", 1);
 
     const techNodes = g.append("g")
       .selectAll("foreignObject")
@@ -130,31 +137,14 @@ const links = [
       .attr("y", -15)
       .attr("width", 30)
       .attr("height", 30)
+      .style("cursor", "pointer")
+      .style("outline", "none")
       .each(function(d) {
         const root = ReactDOM.createRoot(this);
         root.render(React.createElement(techIcons[d.id], { size: "30px", color: theme === "dark" ? "#fff" : "#333" }));
-    });
+      });
 
-    const node = g.append("g")
-      .selectAll("circle")
-      .data(nodes.filter(d => d.group === "root" || d.group === "category"))
-      .enter()
-      .append("circle")
-      .attr("r", d => d.group === "root" ? 6 : 4)
-      .attr("fill", theme === "dark" ? "#555" : "#222") // Darker node color for dark theme
-      .attr("stroke", theme === "dark" ? "#fff" : "#333" )
-      .attr("stroke-width", 2);
-
-    const text = g.append("g")
-      .selectAll("text")
-      .data(nodes.filter(d => d.group === "root" || d.group === "category"))
-      .enter()
-      .append("text")
-      .text(d => d.id)
-      .attr("font-size", "14px")
-      .attr("fill", theme === "dark" ? "#ccc" : "#333") // Lighter text for dark theme
-      .attr("text-anchor", "middle");
-
+    // Adjusting label text positioning above the tech node rectangles
     const techText = g.append("g")
       .selectAll("text")
       .data(nodes.filter(d => d.group === "tech"))
@@ -164,7 +154,28 @@ const links = [
       .attr("font-size", "12px")
       .attr("fill", theme === "dark" ? "#fff" : "#333") // Text color for tech nodes
       .attr("x", d => d.x)
-      .attr("y", d => d.y + 12) // Positioning the text below the rectangle with some space
+      .attr("y", d => d.y) // Positioning the text above the rectangle with some space
+      .attr("text-anchor", "middle");
+
+    const node = g.append("g")
+      .selectAll("circle")
+      .data(nodes.filter(d => d.group === "root" || d.group === "category"))
+      .enter()
+      .append("circle")
+      .attr("r", d => d.group === "root" ? 6 : 4)
+      .attr("fill", theme === "dark" ? "#555" : "#222") // Darker node color for dark theme
+      .attr("stroke", theme === "dark" ? "#fff" : "#333")
+      .attr("stroke-width", 2)
+      .style("cursor", "pointer"); // Set pointer cursor on hover
+
+    const text = g.append("g")
+      .selectAll("text")
+      .data(nodes.filter(d => d.group === "root" || d.group === "category"))
+      .enter()
+      .append("text")
+      .text(d => d.id)
+      .attr("font-size", "14px")
+      .attr("fill", theme === "dark" ? "#ccc" : "#333") // Lighter text for dark theme
       .attr("text-anchor", "middle");
 
     const drag = d3.drag()
@@ -233,7 +244,7 @@ const links = [
 
       techText
         .attr("x", d => d.x)
-        .attr("y", d => d.y + 40); // Adjusting the tech node text position
+        .attr("y", d => d.y - 30); // Adjusting the tech node text position to be above the node
     });
 
     const resizeHandler = () => {

@@ -4,10 +4,10 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import Link from "next/link";
 
 import Me from "@/app/assets/me.jpeg";
 import SkillGraph from "./components/SkillGraph";
+import LinkButton from "./components/LinkButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-6 sm:px-12 py-4">
       {/* Name and Intro */}
-      <section className="fade-in flex items-center justify-between w-full">
+      <section className="fade-in flex items-center justify-around w-full">
         <div className="fade-in w-24 h-24 sm:w-40 sm:h-40 relative rounded-full overflow-hidden shadow-lg">
           <Image src={Me} alt="Harry Ahn" layout="fill" objectFit="cover" />
         </div>
@@ -35,52 +35,49 @@ export default function Home() {
             Full-Stack Software Engineer
           </h2>
         </div>
-      </section >
+      </section>
 
       <ul>
         {/* Current */}
         <li className="fade-in mt-10 w-full">
           <h3 className="italic text-gray-700 dark:text-gray-200">currently, I am:</h3>
-          <ul className="mt-2 space-y-2">
-            <li>📚 studying BS/MS in CS @ USC Viterbi School of Engineering</li>
-            <li>🚀 building at <b>LavaLab</b>, USC’s premier startup incubator.</li>
-            <li>💻 developing at <b>USC University Advancement</b>.</li>
-            <li>🤖 self-learning with CS50 AI at Harvard and Google.</li>
+          <ul className="mt-2 space-y-2 pl-4">
+            <li>📚 studying BS/MS in CS @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton></li>
+            <li>🚀 building at <LinkButton href="https://usclavalab.org/">LavaLab</LinkButton>, USC’s premier startup incubator.</li>
+            <li>💻 developing at <LinkButton href="https://giving.usc.edu/">USC University Advancement</LinkButton>.</li>
+            <li>🤖 self-learning with <LinkButton href="https://cs50.harvard.edu/ai/">CS50 AI</LinkButton> at Harvard and Google.</li>
           </ul>
         </li>
         {/* History */}
         <li className="fade-in mt-10 w-full">
           <h3 className="italic text-gray-700 dark:text-gray-200">recently, I:</h3>
-          <ul className="mt-2 space-y-2">
-            <li>🔹 interned as SWE at <b>Qraft Technologies</b>, a fintech startup.</li>
-            <li>🔹 completed <b>The Odin Project</b>, a comprehensive coding bootcamp in full-stack JS.</li>
-            <li>🔹 created a <b>fully-functional </b> for fun (and extra credit!).</li>
+          <ul className="mt-2 space-y-2 pl-4">
+            <li>🔹 interned as SWE at <LinkButton href="https://www.qraftec.com/">Qraft Technologies</LinkButton>, a fintech startup.</li>
+            <li>🔹 completed <LinkButton href="https://www.theodinproject.com/">The Odin Project</LinkButton>, a comprehensive coding bootcamp in full-stack JS.</li>
+            <li>🔹 created a <LinkButton href="https://flexor-front-end-2c6r.vercel.app/">social media platform</LinkButton> for fun.</li>
+            {/* Project Nav */}
+            <li className="fade-in flex items-center gap-4">
+              <span>🔹 jump to</span>
+              <LinkButton href="/projects" className="flex-shrink-0 text-center">
+                my projects →
+              </LinkButton>
+              <span>or</span>
+              <LinkButton href="/skills" className="flex-shrink-0 text-center">
+                my skills →
+              </LinkButton>
+            </li>
           </ul>
-          {/* Project Nav */}
-          <div className="fade-in mt-12 flex justify-around items-center gap-4">
-            <Link href="/projects" className="flex-shrink-0 w-[200px]">
-              <span className="px-6 py-3 rounded-lg border-2 border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 transition-all hover:bg-gray-800 hover:text-white dark:hover:bg-gray-700 text-center">
-                See My Projects →
-              </span>
-            </Link>
-            <Link href="/skills" className="flex-shrink-0 w-[200px]">
-              <span className="px-6 py-3 rounded-lg border-2 border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 transition-all hover:bg-gray-800 hover:text-white dark:hover:bg-gray-700 text-center">
-                See Tech Stack →
-              </span>
-            </Link>
-          </div>
-
         </li>
         {/* Fun Facts */}
         <li className="fade-in mt-10 w-full">
           <h3 className="italic text-gray-700 dark:text-gray-200">did you know?</h3>
-          <ul className="mt-2 space-y-2">
-            <li>🌎 i lived in Korea, France, Singapore, Hong Kong, and the UK.</li>
+          <ul className="mt-2 space-y-2 pl-4">
+            <li>🌎 i am Korean by birth, but have lived in France, Singapore, Hong Kong, UK, and now the US.</li>
             <li>🎭 i changed my major every year since started university.</li>
-            <li>☕ iced coffee is my blood type (얼죽아).</li>
+            <li>🐩 i have an obsession with my <LinkButton href="https://drive.google.com/file/d/1-bqq4FrjviTp4diNt37gkz6cnVYWMXuf/view?usp=sharing">poodle</LinkButton> and miss him everyday :&#41;</li>
           </ul>
         </li>
-      </ul>      
+      </ul>
     </div>
   );
 }

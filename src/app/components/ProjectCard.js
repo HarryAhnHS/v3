@@ -7,7 +7,7 @@ const ProjectCard = ({ project }) => {
         <Image 
             src={project.image} 
             alt={project.imageAlt} 
-            className="rounded-t-lg w-full h-[200px] group-hover:h-[275px] object-cover object-top transition-all duration-500"
+            className="rounded-t-lg w-full h-[200px] object-cover object-top transition-all duration-500"
             />
 
         <div className="p-4">

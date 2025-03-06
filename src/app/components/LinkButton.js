@@ -14,6 +14,7 @@ export default function LinkButton({
     inline-flex items-center
     text-stone-700 dark:text-stone-300
     transition-all duration-300
+    font-bold
     ${!isActive && `
       after:absolute
       after:left-0
