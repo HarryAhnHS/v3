@@ -44,7 +44,7 @@ export default function Home() {
             <li className="transition hover:translate-x-2">📚 studying BS/MS in CS @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton></li>
             <li className="transition hover:translate-x-2">🌋 building at <LinkButton href="https://usclavalab.org/">LavaLab</LinkButton>, USC’s premier startup incubator.</li>
             <li className="transition hover:translate-x-2">💻 developing at <LinkButton href="https://giving.usc.edu/">USC University Advancement</LinkButton>.</li>
-            <li className="transition hover:translate-x-2">🤖 self-learning with <LinkButton href="https://cs50.harvard.edu/ai/">CS50 AI</LinkButton> at Harvard and Google.</li>
+            <li className="transition hover:translate-x-2">🤖 self-learning with <LinkButton href="https://cs50.harvard.edu/ai/">CS50AI</LinkButton> at Harvard.</li>
           </ul>
         </li>
         {/* History */}
