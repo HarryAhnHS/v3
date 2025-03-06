@@ -1,18 +1,24 @@
 import Link from "next/link";
+import LinkButton from "./LinkButton";
 
 export default function Navbar() {
   return (
     <nav>
       <ul className="flex items-center gap-6 text-sm text-stone-600 dark:text-stone-400">
         <li>
-          <Link href="/" className="hover:text-stone-900 dark:hover:text-stone-100 transition">
+          <LinkButton href="/" isNextLink={true}>
             Home
-          </Link>
+          </LinkButton>
         </li>
         <li>
-          <Link href="/projects" className="hover:text-stone-900 dark:hover:text-stone-100 transition">
+          <LinkButton href="/projects" isNextLink={true}>
             Projects
-          </Link>
+          </LinkButton>
+        </li>
+        <li>
+          <LinkButton href="/skills" isNextLink={true}>
+            Skills
+          </LinkButton>
         </li>
       </ul>
     </nav>

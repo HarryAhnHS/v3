@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import Flexor from "../assets/projects/Flexor.png";
 import ProjectList from "../components/ProjectList";
+import LinkButton from "../components/LinkButton";
 
 const projects = [
   {
@@ -67,16 +68,16 @@ export default function Projects() {
       />
       <div className="mt-4 flex items-center justify-center">
         <span>
-            See more projects
-            <Link target="_blank" href="https://harryahnhs.github.io/portfolio/">
-                &nbsp;here,&nbsp;
-            </Link>
+            See more projects&nbsp;
+            <LinkButton target="_blank" href="https://harryahnhs.github.io/portfolio/">
+                here
+            </LinkButton>
         </span>
         <span>
-            or on my
-            <Link target="_blank" href="https://github.com/yourgithub">
-                &nbsp;GitHub&nbsp;
-            </Link>.
+            &nbsp;or on my&nbsp;
+            <LinkButton target="_blank" href="https://github.com/harryahnhs">
+                GitHub
+            </LinkButton>.
         </span>
       </div>
     </>

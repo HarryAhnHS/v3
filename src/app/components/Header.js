@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+import LinkButton from "./LinkButton";
 import { useTheme } from "./ThemeProvider";
 import { Clapperboard, Hand, Handshake, Heart, Moon, Sun } from "lucide-react";
 
@@ -28,9 +29,9 @@ export default function Header() {
 
     return (
         <header className="px-6 py-2 flex justify-between items-center border-b border-neutral-500 dark:border-neutral-400 ">
-            <div className="text-lg text-gray-800 dark:text-white">
-                Harry Ahn
-            </div>
+            <LinkButton href="/" isNextLink={true} className="text-lg">
+                HarryAhn
+            </LinkButton>
 
             <Navbar />
 

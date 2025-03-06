@@ -23,9 +23,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-6 sm:px-12">
+    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-6 sm:px-12 py-4">
       {/* Name and Intro */}
-      <section className="fade-in flex items-center justify-center mt-10 gap-4 w-full">
+      <section className="fade-in flex items-center justify-between w-full">
         <div className="fade-in w-24 h-24 sm:w-40 sm:h-40 relative rounded-full overflow-hidden shadow-lg">
           <Image src={Me} alt="Harry Ahn" layout="fill" objectFit="cover" />
         </div>
@@ -57,13 +57,19 @@ export default function Home() {
             <li>🔹 created a <b>fully-functional </b> for fun (and extra credit!).</li>
           </ul>
           {/* Project Nav */}
-          <div className="fade-in mt-12">
-          <Link href="/projects">
-            <span className="px-6 py-3 rounded-lg border-2 border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 transition-all hover:bg-gray-800 hover:text-white dark:hover:bg-gray-700">
-              See My Projects →
-            </span>
-          </Link>
-        </div>
+          <div className="fade-in mt-12 flex justify-around items-center gap-4">
+            <Link href="/projects" className="flex-shrink-0 w-[200px]">
+              <span className="px-6 py-3 rounded-lg border-2 border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 transition-all hover:bg-gray-800 hover:text-white dark:hover:bg-gray-700 text-center">
+                See My Projects →
+              </span>
+            </Link>
+            <Link href="/skills" className="flex-shrink-0 w-[200px]">
+              <span className="px-6 py-3 rounded-lg border-2 border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 transition-all hover:bg-gray-800 hover:text-white dark:hover:bg-gray-700 text-center">
+                See Tech Stack →
+              </span>
+            </Link>
+          </div>
+
         </li>
         {/* Fun Facts */}
         <li className="fade-in mt-10 w-full">
@@ -74,20 +80,7 @@ export default function Home() {
             <li>☕ iced coffee is my blood type (얼죽아).</li>
           </ul>
         </li>
-      </ul>
-
-      {/* Skills and Frameworks */}
-      <div className="fade-in mt-10 w-full">
-          <h3 className="italic text-gray-700 dark:text-gray-200">skills:</h3>
-          <div className="w-full h-[600px] space-y-2 border flex items-center justify-center">
-            {/* Node graph using d3js */}
-              <SkillGraph />
-          </div>
-      </div>
-      
-
-      
-      
+      </ul>      
     </div>
   );
 }
