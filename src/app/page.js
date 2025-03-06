@@ -58,11 +58,11 @@ export default function Home() {
             {/* Project Nav */}
             <li className="fade-in flex items-center gap-4">
               <span>🔹 jump to</span>
-              <LinkButton href="/projects" className="flex-shrink-0 text-center">
+              <LinkButton isNextLink={true} href="/projects" className="flex-shrink-0 text-center">
                 my projects →
               </LinkButton>
               <span>or</span>
-              <LinkButton href="/skills" className="flex-shrink-0 text-center">
+              <LinkButton isNextLink={true} href="/skills" className="flex-shrink-0 text-center">
                 my skills →
               </LinkButton>
             </li>
