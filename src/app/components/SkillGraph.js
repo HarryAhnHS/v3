@@ -81,7 +81,7 @@ const SkillGraph = () => {
       .attr("width", 40)
       .attr("height", 40)
       .attr("rx", 10)
-      .attr("fill", theme === "dark" ? "#444" : "#ddd") // Lighter background for dark theme
+      .attr("fill", theme === "dark" ? "#444" : "#eee") // Lighter background for dark theme
       .attr("stroke", theme === "dark" ? "#888" : "#333") // Darker border for light theme
       .attr("stroke-width", 2);
 
@@ -106,7 +106,7 @@ const SkillGraph = () => {
       .append("circle")
       .attr("r", d => d.group === "root" ? 6 : 2)
       .attr("fill", theme === "dark" ? "#555" : "#222") // Darker node color for dark theme
-      .attr("stroke", "#fff")
+      .attr("stroke", theme === "dark" ? "#fff" : "#333" )
       .attr("stroke-width", 2);
 
     const text = g.append("g")
@@ -128,7 +128,7 @@ const SkillGraph = () => {
       .attr("font-size", "12px")
       .attr("fill", theme === "dark" ? "#fff" : "#333") // Text color for tech nodes
       .attr("x", d => d.x)
-      .attr("y", d => d.y + 25) // Positioning the text below the rectangle with some space
+      .attr("y", d => d.y + 12) // Positioning the text below the rectangle with some space
       .attr("text-anchor", "middle");
 
     const drag = d3.drag()

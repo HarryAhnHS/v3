@@ -7,8 +7,9 @@ const ProjectCard = ({ project }) => {
         <Image 
             src={project.image} 
             alt={project.imageAlt} 
-            className="rounded-t-lg w-full h-[200px] group-hover:h-[275px] object-cover object-center transition-all duration-500"
-        />
+            className="rounded-t-lg w-full h-[200px] group-hover:h-[275px] object-cover object-top transition-all duration-500"
+            />
+
         <div className="p-4">
             <h3 className="text-xl text-neutral-800 dark:text-neutral-200 font-semibold">{project.title}</h3>
             <p className="text-sm mt-2">{project.description}</p>
