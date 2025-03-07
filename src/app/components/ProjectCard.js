@@ -4,7 +4,7 @@ import { GithubIcon, SquareArrowOutUpRight } from "lucide-react";
 const ProjectCard = ({ project }) => {
   return (
     <div 
-      className="block bg-neutral-100/50 dark:bg-neutral-800/50 rounded-2xl overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neutral-400/30 dark:hover:shadow-neutral-900/50"
+      className="block bg-neutral-200/50 dark:bg-neutral-800/50 rounded-2xl overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neutral-400/30 dark:hover:shadow-neutral-900/50"
     >
       <a 
         href={project.demo} 
