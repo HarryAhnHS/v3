@@ -12,8 +12,19 @@ import ResumeGenerator from "../assets/projects/ResumeGenerator.png";
 import BattleShip from "../assets/projects/Battleship.png"
 import ThingsToDo from "../assets/projects/ThingsToDo.png";
 import TicTacToe from "../assets/projects/TicTacToe.png";
+import InsidePDF from "../assets/projects/InsidePDF.png";
 
 const projects = [
+    {
+      title: "InsidePDF",
+      href: "https://inside-pdf.up.railway.app/",
+      description: "An AI-enhanced PDF reader offering Text-to-Speech, AI Chat Assistant, and Smart Navigation for improved reading and comprehension.",
+      image: InsidePDF,
+      imageAlt: "InsidePDF",
+      technologies: ["React", "Next.js", "GSAP", "TailwindCSS", "PDF.js", "TTS", "Llama"],
+      github: "https://github.com/HarryAhnHS/inside-pdf",
+      demo: "https://inside-pdf.up.railway.app/"
+    },
     {
       title: "Flexor",
       href: "https://flexor-front-end-2c6r.vercel.app/",
