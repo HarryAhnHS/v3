@@ -11,13 +11,35 @@ import { MdJavascript } from "react-icons/md";
 import { RiSupabaseLine } from "react-icons/ri";
 import { TbBrandPrisma } from "react-icons/tb";
 
-
 import { useTheme } from "./ThemeProvider";
 
-const SkillGraph = () => {
+const techIcons = {
+  "React": FaReact,
+  "Node.js": FaNodeJs,
+  "Express": SiExpress,
+  "Firebase": SiFirebase,
+  "PostGreSQL": SiPostgresql,
+  "C++": SiCplusplus,
+  "Python": SiPython,
+  "JavaScript": MdJavascript,
+  "Java": DiJava,
+  "SwiftUI": SiSwift,
+  "Flutter": SiFlutter,
+  "Git": FaGit,
+  "Docker": DiDocker,
+  "Selenium": SiSelenium,
+  "MongoDB": TbBrandMongodb,
+  "NextJS": TbBrandNextjs,
+  "Supabase": RiSupabaseLine,
+  "Railway": SiRailway,
+  "Heroku": DiHeroku,
+  "Prisma": TbBrandPrisma
+};
+
+const SkillGraph = ({ nodes, links }) => {
   const svgRef = useRef(null);
   const gRef = useRef(null);
-  const { theme } = useTheme(); // Accessing the theme from the context
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -33,87 +55,6 @@ const SkillGraph = () => {
     const gWidth = width * 1.1;
     const gHeight = height * 1.1;
     svg.attr("viewBox", `0 0 ${gWidth} ${gHeight}`);
-
-    // techIcons including languages, frameworks, and additional tools
-    const techIcons = {
-      "React": FaReact,
-      "Node.js": FaNodeJs,
-      "Express": SiExpress,
-      "Firebase": SiFirebase,
-      "PostGreSQL": SiPostgresql,
-      "C++": SiCplusplus,
-      "Python": SiPython,
-      "JavaScript": MdJavascript,
-      "Java": DiJava,
-      "SwiftUI": SiSwift,
-      "Flutter": SiFlutter,
-      "Git": FaGit,
-      "Docker": DiDocker,
-      "Selenium": SiSelenium,
-      "MongoDB": TbBrandMongodb,
-      "NextJS": TbBrandNextjs,
-      "Supabase": RiSupabaseLine,
-      "Railway": SiRailway,
-      "Heroku": DiHeroku,
-      "Prisma": TbBrandPrisma
-    };
-
-    // Nodes including the new DevOps, Database, and Frontend entries
-    const nodes = [
-      { id: "Me", group: "root" },
-      { id: "Frontend", group: "category" },
-      { id: "React", group: "tech" },
-      { id: "NextJS", group: "tech" },
-      { id: "Backend", group: "category" },
-      { id: "Node.js", group: "tech" },
-      { id: "Express", group: "tech" },
-      { id: "Database", group: "category" },
-      { id: "Firebase", group: "tech" },
-      { id: "PostGreSQL", group: "tech" },
-      { id: "MongoDB", group: "tech" },
-      { id: "DevOps", group: "category" },
-      { id: "Git", group: "tech" },
-      { id: "Docker", group: "tech" },
-      { id: "Selenium", group: "tech" },
-      { id: "Railway", group: "tech" },
-      { id: "Language", group: "category" },
-      { id: "C++", group: "tech" },
-      { id: "Python", group: "tech" },
-      { id: "JavaScript", group: "tech" },
-      { id: "SwiftUI", group: "tech" },
-      { id: "Flutter", group: "tech" },
-      { id: "Java", group: "tech" },
-      { id: "Supabase", group: "tech" },
-      { id: "Prisma", group: "tech" },
-    ];
-
-    // Links including new connections between tools and languages
-    const links = [
-      { source: "Me", target: "Frontend" },
-      { source: "Me", target: "Backend" },
-      { source: "Me", target: "Database" },
-      { source: "Me", target: "DevOps" },
-      { source: "Me", target: "Language" },
-      { source: "Frontend", target: "React" },
-      { source: "Frontend", target: "NextJS" },
-      { source: "Backend", target: "Node.js" },
-      { source: "Backend", target: "Express" },
-      { source: "Database", target: "Firebase" },
-      { source: "Database", target: "PostGreSQL" },
-      { source: "Database", target: "MongoDB" },
-      { source: "Database", target: "Prisma" },
-      { source: "DevOps", target: "Git" }, 
-      { source: "DevOps", target: "Docker" }, 
-      { source: "DevOps", target: "Selenium" }, 
-      { source: "DevOps", target: "Supabase" }, 
-      { source: "DevOps", target: "Railway" }, 
-      { source: "Language", target: "C++" },
-      { source: "Language", target: "Python" },
-      { source: "Language", target: "JavaScript" },
-      { source: "Language", target: "SwiftUI" },
-      { source: "Language", target: "Flutter" },
-      { source: "Language", target: "Java" },
-    ];
 
     const simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id).distance(75))
@@ -137,8 +78,8 @@ const SkillGraph = () => {
       .attr("width", 40)
       .attr("height", 40)
       .attr("rx", 10)
-      .attr("fill", theme === "dark" ? "#444" : "#eee") // Lighter background for dark theme
-      .attr("stroke", theme === "dark" ? "#888" : "#222") // Darker border for light theme
+      .attr("fill", theme === "dark" ? "#444" : "#eee")
+      .attr("stroke", theme === "dark" ? "#888" : "#222")
       .attr("stroke-width", 1);
 
     const techNodes = g.append("g")
@@ -157,7 +98,6 @@ const SkillGraph = () => {
         root.render(React.createElement(techIcons[d.id], { size: "30px", color: theme === "dark" ? "#fff" : "#333" }));
       });
 
-    // Adjusting label text
     const techText = g.append("g")
       .selectAll("text")
       .data(nodes.filter(d => d.group === "tech"))
@@ -165,12 +105,11 @@ const SkillGraph = () => {
       .append("text")
       .text(d => d.id)
       .attr("font-size", "10px")
-      .attr("fill", theme === "dark" ? "#fff" : "#333") // Text color for tech nodes
+      .attr("fill", theme === "dark" ? "#fff" : "#333")
       .attr("x", d => d.x)
       .attr("y", d => d.y + 20)
       .attr("text-anchor", "middle")
-      .attr("class", "tech-node-label");  // Add class for mobile visibility
-
+      .attr("class", "tech-node-label");
 
     const node = g.append("g")
       .selectAll("circle")
@@ -178,10 +117,10 @@ const SkillGraph = () => {
       .enter()
       .append("circle")
       .attr("r", d => d.group === "root" ? 6 : 4)
-      .attr("fill", theme === "dark" ? "#555" : "#222") // Darker node color for dark theme
+      .attr("fill", theme === "dark" ? "#555" : "#222")
       .attr("stroke", theme === "dark" ? "#fff" : "#333")
       .attr("stroke-width", 2)
-      .style("cursor", "pointer"); // Set pointer cursor on hover
+      .style("cursor", "pointer");
 
     const text = g.append("g")
       .selectAll("text")
@@ -190,7 +129,7 @@ const SkillGraph = () => {
       .append("text")
       .text(d => d.id)
       .attr("font-size", "14px")
-      .attr("fill", theme === "dark" ? "#ccc" : "#333") // Lighter text for dark theme
+      .attr("fill", theme === "dark" ? "#ccc" : "#333")
       .attr("text-anchor", "middle");
 
     const drag = d3.drag()
@@ -253,33 +192,25 @@ const SkillGraph = () => {
         .attr("x", d => d.x - 15)
         .attr("y", d => d.y - 15);
 
-      text
+      techText
         .attr("x", d => d.x)
         .attr("y", d => d.y + 20);
 
-      techText
+      text
         .attr("x", d => d.x)
-        .attr("y", d => d.y + 35); // Adjusting the tech node text position to be above the node
+        .attr("y", d => d.y + 20);
     });
 
-    const resizeHandler = () => {
-      const { width, height } = svgRef.current.getBoundingClientRect();
-      const gWidth = width * 1.1;
-      const gHeight = height * 1.1;
-      svg.attr("viewBox", `0 0 ${gWidth} ${gHeight}`);
-      simulation.force("center", d3.forceCenter(gWidth / 2, gHeight / 2)).alpha(1).restart();
-    };
-
-    window.addEventListener("resize", resizeHandler);
+    // Cleanup function
     return () => {
-      window.removeEventListener("resize", resizeHandler);
+      simulation.stop();
       tooltip.remove();
     };
-  }, [theme]);
+  }, [nodes, links, theme]);
 
   return (
-    <svg ref={svgRef} width="100%" height="100%">
-      <g ref={gRef} />
+    <svg ref={svgRef} className="w-full h-full">
+      <g ref={gRef}></g>
     </svg>
   );
 };
