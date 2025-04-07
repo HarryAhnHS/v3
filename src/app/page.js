@@ -36,9 +36,9 @@ export default function Home() {
         </div>
       </section>
 
-      <ul>
+      <ul className="w-full flex flex-col items-center justify-center">
         {/* Current */}
-        <li className="fade-in mt-10 w-full">
+        <li className="fade-in mt-10 w-4/5">
           <h3 className="italic text-gray-700 dark:text-gray-200">currently, I am:</h3>
           <ul className="mt-2 space-y-2 pl-4">
             <li className="transition hover:translate-x-2">📚 studying BS/MS in CS @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton></li>
@@ -48,7 +48,7 @@ export default function Home() {
           </ul>
         </li>
         {/* History */}
-        <li className="fade-in mt-10 w-full">
+        <li className="fade-in mt-10 w-4/5">
           <h3 className="italic text-gray-700 dark:text-gray-200">recently, I:</h3>
           <ul className="mt-2 space-y-2 pl-4">
             <li className="transition hover:translate-x-2">🔹 interned as SWE at <LinkButton href="https://www.qraftec.com/">Qraft Technologies</LinkButton>, a fintech startup.</li>
@@ -68,13 +68,13 @@ export default function Home() {
             </LinkButton>
         </div>
         {/* Fun Facts */}
-        <li className="fade-in mt-10 w-full">
+        <li className="fade-in mt-10 w-4/5">
           <h3 className="italic text-gray-700 dark:text-gray-200">did you know?</h3>
           <ul className="mt-2 space-y-2 pl-4">
             <li className="transition hover:translate-x-2">🌎 i am Korean by birth, but have lived in France, Singapore, Hong Kong, UK, and am currently living in the US.</li>
             <li className="transition hover:translate-x-2">🧩 i can solve the <LinkButton href="https://www.worldcubeassociation.org/persons/2015AHNH01">Rubik&apos;s cube</LinkButton> in 15 seconds.</li>
             <li className="transition hover:translate-x-2">🎧 i sometimes produce <LinkButton href="https://soundcloud.com/hhypno/sets/portfolio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">trap instrumentals</LinkButton> on FL Studio 20 for fun.</li>
-            <li className="transition hover:translate-x-2">🐩 i miss my <LinkButton href="https://drive.google.com/file/d/1-bqq4FrjviTp4diNt37gkz6cnVYWMXuf/view?usp=sharing">poodle</LinkButton> :&#40; he&apos;s at home.</li>
+            {/* <li className="transition hover:translate-x-2">🐩 i miss my <LinkButton href="https://drive.google.com/file/d/1-bqq4FrjviTp4diNt37gkz6cnVYWMXuf/view?usp=sharing">poodle</LinkButton> :&#40; he&apos;s at home.</li> */}
           </ul>
         </li>
       </ul>

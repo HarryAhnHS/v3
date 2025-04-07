@@ -22,9 +22,9 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full px-4 md:px-0">
+    <div className="relative flex flex-col items-center justify-center w-full">
       <div className="fade-in w-full gap-2">
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-center mb-4 px-4 md:px-8">
           <h3 className="italic text-gray-700 dark:text-gray-200">
             check out my most comfortable tech stack:
           </h3>
@@ -54,7 +54,7 @@ export default function Skills() {
         
         <div className="w-full space-y-2 flex items-center justify-center rounded-sm bg-neutral-300/20 dark:bg-neutral-800/20 p-4">
           {viewMode === "graph" ? (
-            <div className="w-full h-[700px]">
+            <div className="w-full h-[800px]">
               <SkillGraph nodes={nodes} links={links} />
             </div>
           ) : (

@@ -6,8 +6,19 @@ import BattleShip from "../assets/projects/Battleship.png"
 import ThingsToDo from "../assets/projects/ThingsToDo.png";
 import TicTacToe from "../assets/projects/TicTacToe.png";
 import InsidePDF from "../assets/projects/InsidePDF.png";
+import TooLateAI from "../assets/projects/Toolate.png";
 
 export const projects = [
+  {
+    title: "TooLate.ai",
+    href: "https://toolate.up.railway.app/",
+    description: "RAG + LLM-powered platform that semantically compares AI startup ideas against a multi-source scraped corpus, offering GPT-backed positioning feedback and suggestions. Built in 3 days.",
+    image: TooLateAI,
+    imageAlt: "TooLate.ai",
+    technologies: ["Python FastAPI", "FAISS", "SentenceTransformers", "NextJS", "TailwindCSS", "GraphQL", "LLM", "RAG", "Scraping"],
+    github: "https://github.com/HarryAhnHS/toolate-api",
+    demo: "https://toolate.up.railway.app/"
+  },  
   {
     title: "InsidePDF",
     href: "https://inside-pdf.up.railway.app/",

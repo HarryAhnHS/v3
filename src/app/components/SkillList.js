@@ -1,37 +1,8 @@
 "use client";
 
 import React from "react";
-import { FaReact, FaNodeJs, FaGit } from "react-icons/fa";
-import { SiExpress, SiPostgresql, SiFirebase, SiSwift, SiFlutter, SiCplusplus, SiPython, SiSelenium, SiRailway } from "react-icons/si";
-import { TbBrandNextjs, TbBrandMongodb } from "react-icons/tb";
-import { DiJava, DiDocker, DiHeroku } from "react-icons/di";
-import { MdJavascript } from "react-icons/md";
-import { RiSupabaseLine } from "react-icons/ri";
-import { TbBrandPrisma } from "react-icons/tb";
 import { useTheme } from "./ThemeProvider";
-
-const techIcons = {
-  "React": FaReact,
-  "Node.js": FaNodeJs,
-  "Express": SiExpress,
-  "Firebase": SiFirebase,
-  "PostGreSQL": SiPostgresql,
-  "C++": SiCplusplus,
-  "Python": SiPython,
-  "JavaScript": MdJavascript,
-  "Java": DiJava,
-  "SwiftUI": SiSwift,
-  "Flutter": SiFlutter,
-  "Git": FaGit,
-  "Docker": DiDocker,
-  "Selenium": SiSelenium,
-  "MongoDB": TbBrandMongodb,
-  "NextJS": TbBrandNextjs,
-  "Supabase": RiSupabaseLine,
-  "Railway": SiRailway,
-  "Heroku": DiHeroku,
-  "Prisma": TbBrandPrisma
-};
+import { techIcons } from "../data/skills";
 
 const SkillList = ({ nodes, links }) => {
   const { theme } = useTheme();

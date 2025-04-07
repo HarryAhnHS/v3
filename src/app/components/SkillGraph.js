@@ -1,40 +1,12 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
-import * as d3 from "d3";
-
-import { FaReact, FaNodeJs, FaGit } from "react-icons/fa";
-import { SiExpress, SiPostgresql, SiFirebase, SiSwift, SiFlutter, SiCplusplus, SiPython, SiSelenium, SiRailway } from "react-icons/si";
-import { TbBrandNextjs, TbBrandMongodb } from "react-icons/tb";
-import { DiJava, DiDocker, DiHeroku } from "react-icons/di";
-import { MdJavascript } from "react-icons/md";
-import { RiSupabaseLine } from "react-icons/ri";
-import { TbBrandPrisma } from "react-icons/tb";
+import * as d3 from "d3"
 
 import { useTheme } from "./ThemeProvider";
+import { techIcons } from "../data/skills";
 
-const techIcons = {
-  "React": FaReact,
-  "Node.js": FaNodeJs,
-  "Express": SiExpress,
-  "Firebase": SiFirebase,
-  "PostGreSQL": SiPostgresql,
-  "C++": SiCplusplus,
-  "Python": SiPython,
-  "JavaScript": MdJavascript,
-  "Java": DiJava,
-  "SwiftUI": SiSwift,
-  "Flutter": SiFlutter,
-  "Git": FaGit,
-  "Docker": DiDocker,
-  "Selenium": SiSelenium,
-  "MongoDB": TbBrandMongodb,
-  "NextJS": TbBrandNextjs,
-  "Supabase": RiSupabaseLine,
-  "Railway": SiRailway,
-  "Heroku": DiHeroku,
-  "Prisma": TbBrandPrisma
-};
+
 
 const SkillGraph = ({ nodes, links }) => {
   const svgRef = useRef(null);
