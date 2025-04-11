@@ -7,14 +7,14 @@ import SkillGraph from "../components/SkillGraph";
 import SkillList from "../components/SkillList";
 import { LayoutGrid, List } from "lucide-react";
 import { nodes, links } from "../data/skills";
-import { useMobileDevice } from "../hooks/useMobileDevice";
+import useMobileDevice from "../hooks/useMobileDevice";
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Skills() {
-  const isMobileDevice = useMobileDevice();
   const [viewMode, setViewMode] = useState("graph");
+  const isMobileDevice = useMobileDevice();
 
   useEffect(() => {
     setViewMode(isMobileDevice ? "list" : "graph");

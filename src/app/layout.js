@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ThemeProvider from "./components/ThemeProvider";
-
+import CommandPalette from "./components/CommandPalette";
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
               <Footer />
             </div>
           </main>
+          <CommandPalette />
         </ThemeProvider>
       </body>
     </html>
