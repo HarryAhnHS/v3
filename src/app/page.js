@@ -38,7 +38,7 @@ export default function Home() {
 
       <ul className="w-full flex flex-col items-center justify-center">
         {/* Current */}
-        <li className="fade-in mt-10 w-3/4">
+        <li className="fade-in mt-10 w-[90%] sm:w-[70%]">
           <h3 className="italic text-gray-700 dark:text-gray-200">currently, I am:</h3>
           <ul className="mt-2 space-y-2 pl-4">
             <li className="transition hover:translate-x-2">📚 studying BS/MS in CS @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton></li>
@@ -47,12 +47,12 @@ export default function Home() {
           </ul>
         </li>
         {/* History */}
-        <li className="fade-in mt-10 w-3/4">
+        <li className="fade-in mt-10 w-[90%] sm:w-[70%]">
           <h3 className="italic text-gray-700 dark:text-gray-200">recently, I:</h3>
           <ul className="mt-2 space-y-2 pl-4">
             <li className="transition hover:translate-x-2">🔹 interned as SWE at <LinkButton href="https://www.qraftec.com/">Qraft Technologies</LinkButton>, a fintech startup.</li>
             <li className="transition hover:translate-x-2">🔹 completed <LinkButton href="https://www.theodinproject.com/">The Odin Project</LinkButton>, a comprehensive coding bootcamp in full-stack JS.</li>
-            <li className="transition hover:translate-x-2">🔹 developed a <LinkButton href="https://toolate.up.railway.app/">AI Startup Similarity Evaluator</LinkButton> as a side project.</li>
+            <li className="transition hover:translate-x-2">🔹 developed a <LinkButton href="https://toolate.up.railway.app/">AI-Startup Similarity Evaluator</LinkButton> as a side project.</li>
             {/* Project Nav */}
           </ul>
         </li>
@@ -67,7 +67,7 @@ export default function Home() {
             </LinkButton>
         </div>
         {/* Fun Facts */}
-        <li className="fade-in mt-10 w-3/4">
+        <li className="fade-in mt-10 w-[90%] sm:w-[70%]">
           <h3 className="italic text-gray-700 dark:text-gray-200">did you know?</h3>
           <ul className="mt-2 space-y-2 pl-4">
             <li className="transition hover:translate-x-2">🌎 i am Korean by birth, but have lived in France, Singapore, Hong Kong, UK, and am currently living in the US.</li>
