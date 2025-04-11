@@ -26,7 +26,7 @@ export default function Home() {
       {/* Name and Intro */}
       <section className="w-[90%] md:w-[70%] flex flex-col items-center justify-center">
         <div className="fade-in flex justify-center items-center gap-8 fade-in mt-10 w-full">
-          <div className="min-w-40 min-h-40 relative overflow-hidden shadow-lg border-2 border-neutral-300 dark:border-neutral-700">
+          <div className="min-w-40 min-h-40 relative overflow-hidden shadow-lg rounded-full">
             <Image src={Me} alt="Harry Ahn" layout="fill" objectFit="cover" />
           </div>
           <div className="">
@@ -45,7 +45,7 @@ export default function Home() {
         <li className="fade-in mt-10 w-[90%] md:w-[70%]">
           <h3 className="italic text-gray-700 dark:text-gray-200">currently, I am:</h3>
           <ul className="mt-2 space-y-2 pl-4">
-            <li className="transition hover:translate-x-2">📚 studying BS/MS in CS @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton></li>
+            <li className="transition hover:translate-x-2">📚 studying BS in Computer Science @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton>.</li>
             <li className="transition hover:translate-x-2">🌋 building at <LinkButton href="https://usclavalab.org/">LavaLab</LinkButton>, USC&apos;s premier startup incubator.</li>
             <li className="transition hover:translate-x-2">💻 developing at <LinkButton href="https://giving.usc.edu/">USC University Advancement</LinkButton>.</li>
           </ul>
@@ -72,9 +72,7 @@ export default function Home() {
         </li>
 
         {/* Easy Access Nav */}
-        <div className="mt-20 mb-10 w-[90%] lg:w-[70%] fade-in relative">
-          {/* Gradient background with neutral colors */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-neutral-500/20 via-neutral-400/10 to-neutral-500/20 dark:from-neutral-600/20 dark:via-neutral-700/10 dark:to-neutral-600/20 blur-lg rounded-xl"></div>
+        <div className="mt-20 mb-10 fade-in relative">
           
           {/* Content */}
           <div className="relative rounded-2xl py-4 flex flex-col items-center gap-4">
