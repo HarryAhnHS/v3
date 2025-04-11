@@ -28,15 +28,19 @@ export default function Header() {
     };
 
     return (
-        <header className="px-8 sm:px-12 py-2 flex justify-between items-center">
-            <LinkButton href="/" isNextLink={true} className="text-base sm:text-lg font-normal">
-                Harry Ahn
-            </LinkButton>
+        <header className="px-4 sm:px-12 py-2 flex items-center">
+            <div className="hidden sm:block flex-1">
+                <LinkButton href="/" isNextLink={true} className="text-base sm:text-lg font-normal">
+                    Harry Ahn
+                </LinkButton>
+            </div>
 
-            <Navbar />
+            <div className="flex-1 sm:flex-initial">
+                <Navbar />
+            </div>
 
-            <div className="flex items-center gap-2">
-                <div className="relative gap-1 ">
+            <div className="flex items-center gap-2 flex-1 justify-end">
+                <div className="relative gap-1">
                     <button onClick={handleClap} className="relative flex items-center cursor-pointer hover:text-gray-600 dark:hover:text-gray-300 transition-transform duration-300 hover:scale-110">
                         <span className="absolute bottom-5 text-[10px] text-nowrap">high five!</span>
                         <div className="flex items-center gap-1">

@@ -44,7 +44,6 @@ export default function Home() {
             <li className="transition hover:translate-x-2">📚 studying BS/MS in CS @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton></li>
             <li className="transition hover:translate-x-2">🌋 building at <LinkButton href="https://usclavalab.org/">LavaLab</LinkButton>, USC’s premier startup incubator.</li>
             <li className="transition hover:translate-x-2">💻 developing at <LinkButton href="https://giving.usc.edu/">USC University Advancement</LinkButton>.</li>
-            <li className="transition hover:translate-x-2">🤖 self-learning with <LinkButton href="https://cs50.harvard.edu/ai/">CS50AI</LinkButton> at Harvard.</li>
           </ul>
         </li>
         {/* History */}
@@ -53,7 +52,7 @@ export default function Home() {
           <ul className="mt-2 space-y-2 pl-4">
             <li className="transition hover:translate-x-2">🔹 interned as SWE at <LinkButton href="https://www.qraftec.com/">Qraft Technologies</LinkButton>, a fintech startup.</li>
             <li className="transition hover:translate-x-2">🔹 completed <LinkButton href="https://www.theodinproject.com/">The Odin Project</LinkButton>, a comprehensive coding bootcamp in full-stack JS.</li>
-            <li className="transition hover:translate-x-2">🔹 developed a <LinkButton href="https://flexor-front-end-2c6r.vercel.app/">social media platform</LinkButton> as a side project.</li>
+            <li className="transition hover:translate-x-2">🔹 developed a <LinkButton href="https://toolate.up.railway.app/">AI Startup Similarity Evaluator</LinkButton> as a side project.</li>
             {/* Project Nav */}
           </ul>
         </li>
