@@ -30,7 +30,7 @@ export default function Header() {
     return (
         <header className="px-4 sm:px-12 py-2 flex items-center">
             <div className="hidden sm:block flex-1">
-                <LinkButton href="/" isNextLink={true} className="text-base sm:text-lg font-normal">
+                <LinkButton href="/" isNextLink={true} isHighlighted={false} className="text-base sm:text-lg font-normal">
                     Harry Ahn
                 </LinkButton>
             </div>

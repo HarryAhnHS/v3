@@ -7,6 +7,7 @@ export default function LinkButton({
   href,
   isActive,
   isNextLink,
+  isHighlighted = false,
   children,
 }) {
   const baseStyles = `
@@ -15,6 +16,7 @@ export default function LinkButton({
     text-stone-700 dark:text-stone-300
     transition-all duration-300
     font-bold
+    ${isHighlighted ? 'bg-yellow-300/50 dark:bg-yellow-800/20' : ''}
     ${!isActive && `
       after:absolute
       after:left-0
