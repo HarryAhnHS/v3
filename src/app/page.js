@@ -29,9 +29,9 @@ export default function Home() {
           <div className="min-w-40 min-h-40 relative overflow-hidden shadow-lg rounded-full">
             <Image src={Me} alt="Harry Ahn" layout="fill" objectFit="cover" />
           </div>
-          <div className="">
-            <h1 className="fade-in text-3xl lg:text-4xl text-gray-700 dark:text-white">Harry Ahn</h1>
-            <h2 className="fade-in font-extralight text-base lg:text-xl text-gray-700 dark:text-white">
+          <div className="text-neutral-900 dark:text-white">
+            <h1 className="fade-in text-3xl lg:text-4xl">Harry Ahn</h1>
+            <h2 className="fade-in font-extralight text-base lg:text-xl">
               Full-Stack Software Engineer
             </h2>
           </div>
@@ -43,7 +43,7 @@ export default function Home() {
       <ul className="w-full flex flex-col items-center justify-center">
         {/* Current */}
         <li className="fade-in mt-10 w-[90%] md:w-[70%]">
-          <h3 className="italic text-gray-700 dark:text-gray-200">currently, I am:</h3>
+          <h3 className="italic text-neutral-900 dark:text-white">currently, I am:</h3>
           <ul className="mt-2 space-y-2 pl-4">
             <li className="transition hover:translate-x-2">📚 studying BS in Computer Science @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton>.</li>
             <li className="transition hover:translate-x-2">🌋 building at <LinkButton href="https://usclavalab.org/">LavaLab</LinkButton>, USC&apos;s premier startup incubator.</li>
@@ -52,17 +52,17 @@ export default function Home() {
         </li>
         {/* History */}
         <li className="fade-in mt-10 w-[90%] md:w-[70%]">
-          <h3 className="italic text-gray-700 dark:text-gray-200">recently, I:</h3>
+          <h3 className="italic text-neutral-900 dark:text-white">recently, I:</h3>
           <ul className="mt-2 space-y-2 pl-4">
             <li className="transition hover:translate-x-2">🔹 interned as SWE at <LinkButton href="https://www.qraftec.com/">Qraft Technologies</LinkButton>, a fintech startup.</li>
+            <li className="transition hover:translate-x-2">🔹 built and deployed an <LinkButton href="https://toolate.up.railway.app/">AI product similarity evaluator</LinkButton> in 3 days.</li>
             <li className="transition hover:translate-x-2">🔹 completed <LinkButton href="https://www.theodinproject.com/">The Odin Project</LinkButton>, a comprehensive coding bootcamp in full-stack JS.</li>
-            <li className="transition hover:translate-x-2">🔹 developed a <LinkButton href="https://toolate.up.railway.app/">AI-Startup Similarity Evaluator</LinkButton> as a side project.</li>
           </ul>
         </li>
         
         {/* Fun Facts */}
         <li className="fade-in mt-10 w-[90%] md:w-[70%]">
-          <h3 className="italic text-gray-700 dark:text-gray-200">did you know?</h3>
+          <h3 className="italic text-neutral-900 dark:text-white">did you know?</h3>
           <ul className="mt-2 space-y-2 pl-4">
             <li className="transition hover:translate-x-2">🌎 i am Korean by birth, but have lived in France, Singapore, Hong Kong, UK, and am currently living in the US.</li>
             <li className="transition hover:translate-x-2">🧩 i can solve the <LinkButton href="https://www.worldcubeassociation.org/persons/2015AHNH01">Rubik&apos;s cube</LinkButton> in 15 seconds.</li>
@@ -80,7 +80,7 @@ export default function Home() {
 
             {/* Button Row */}
             <div className="flex gap-6 justify-center">
-              <div className="group flex items-center text-base font-medium text-gray-800 dark:text-gray-100">
+              <div className="group flex items-center text-base font-medium">
                 <span className="text-lg">✨</span>
                 <LinkButton
                   isNextLink
@@ -92,7 +92,7 @@ export default function Home() {
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>
 
-              <div className="group flex items-center text-base font-medium text-gray-800 dark:text-gray-100">
+              <div className="group flex items-center text-base font-medium">
                 <span className="text-lg">🚀</span>
                 <LinkButton
                   isNextLink
@@ -106,7 +106,7 @@ export default function Home() {
             </div>
 
             {/* Resume */}
-            <div className="group flex items-center text-base font-medium text-gray-800 dark:text-gray-100">
+            <div className="group flex items-center text-base font-medium">
               <span className="text-lg">📄</span>
               <LinkButton
                 href="/resume.pdf"

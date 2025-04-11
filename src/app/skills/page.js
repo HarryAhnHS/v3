@@ -31,7 +31,7 @@ export default function Skills() {
   return (
     <div className="relative flex flex-col items-center justify-center w-full">
       <div className="fade-in w-full gap-2">
-        <div className="flex justify-between items-center mb-4 px-4 md:px-8">
+        <div className="flex justify-between items-center mb-4">
           <h3 className="italic text-gray-700 dark:text-gray-200">
             check out my most comfortable tech stack:
           </h3>
