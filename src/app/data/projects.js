@@ -7,15 +7,25 @@ import ThingsToDo from "../assets/projects/ThingsToDo.png";
 import TicTacToe from "../assets/projects/TicTacToe.png";
 import InsidePDF from "../assets/projects/InsidePDF.png";
 import TooLateAI from "../assets/projects/Toolate.png";
-
+import TrackAnalyzer from "../assets/projects/TrackAnalyzer.png";
 export const projects = [
+  {
+    title: "Semantic Music Tagger and Analyzer",
+    href: "https://bridge-ml-client-production.up.railway.app/",
+    description: "Built a scalable CLAP + TTMR++ hybrid pipeline for holistic music analysis, semantic tagging and similarity search using FMA datasets. Combined multiple FAISS indices with LLMs to generate human-quality descriptions and rich metadata from raw MP3 uploads. Supports text to music recommendation and artist discovery as the barebones of a recommendation algorithm. Built in 72 hours.",
+    image: TrackAnalyzer,
+    imageAlt: "Semantic Music Tagger and Analyzer",
+    technologies: ["Python FastAPI", "CLAP", "TTMR++", "FAISS", "NextJS", "SentenceTransformers", "LLaMA2", "LLM", "Scripting", "Demucs", "FMA Dataset"],
+    github: "https://github.com/HarryAhnHS/bridge-ml-api",
+    demo: "https://bridge-ml-client-production.up.railway.app/"
+  },
   {
     title: "TooLate.ai",
     href: "https://toolate.up.railway.app/",
-    description: "RAG + LLM-powered platform that semantically compares AI startup ideas against a multi-source scraped corpus, offering GPT-backed positioning feedback and suggestions. Built in 3 days.",
+    description: "RAG + LLM-powered platform that semantically compares AI startup ideas against a multi-source scraped corpus, offering GPT-backed positioning feedback and suggestions. Built in 72 hours.",
     image: TooLateAI,
     imageAlt: "TooLate.ai",
-    technologies: ["Python FastAPI", "FAISS", "SentenceTransformers", "NextJS", "TailwindCSS", "GraphQL", "LLM", "RAG", "Scraping"],
+    technologies: ["Python FastAPI", "FAISS", "SentenceTransformers", "NextJS", "GraphQL", "LLM", "RAG", "Scripting", "Scraping"],
     github: "https://github.com/HarryAhnHS/toolate-api",
     demo: "https://toolate.up.railway.app/"
   },  
