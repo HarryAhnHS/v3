@@ -12,7 +12,7 @@ export const projects = [
   {
     title: "Semantic Music Tagger and Analyzer",
     href: "https://bridge-ml-client-production.up.railway.app/",
-    description: "Built a scalable CLAP + TTMR++ hybrid pipeline for holistic music analysis, semantic tagging and similarity search using FMA datasets. Combined multiple FAISS indices with LLMs to generate human-quality descriptions and rich metadata from raw MP3 uploads. Supports text to music recommendation and artist discovery as the barebones of a recommendation algorithm. Built in 72 hours.",
+    description: "Built a scalable CLAP + TTMR++ hybrid pipeline for holistic music analysis, semantic tagging and similarity search using FMA datasets. Combined multi-vector joint FAISS embeddings with LLMs to generate human-quality descriptions and rich metadata from raw MP3 uploads. Supports text to music recommendation and artist discovery as the barebones of a recommendation algorithm. Built in 72 hours.",
     image: TrackAnalyzer,
     imageAlt: "Semantic Music Tagger and Analyzer",
     technologies: ["Python FastAPI", "CLAP", "TTMR++", "FAISS", "NextJS", "SentenceTransformers", "LLaMA2", "LLM", "Scripting", "Demucs", "FMA Dataset"],
