@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
-import Me from "@/app/assets/me.jpeg";
+import Me from "@/app/assets/me.jpg";
 import LinkButton from "./components/LinkButton";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,7 +27,7 @@ export default function Home() {
       <section className="w-[90%] md:w-[70%] flex flex-col items-center justify-center">
         <div className="fade-in flex justify-center items-center gap-8 fade-in mt-10 w-full">
           <div className="min-w-40 min-h-40 relative overflow-hidden shadow-lg rounded-full">
-            <Image src={Me} alt="Harry Ahn" layout="fill" objectFit="cover" />
+            <Image src={Me} alt="Harry Ahn" layout="fill" objectFit="cover" style={{ transform: "scale(1.2)" }} />
           </div>
           <div className="text-neutral-900 dark:text-white">
             <h1 className="fade-in text-3xl lg:text-4xl">Harry Ahn</h1>
