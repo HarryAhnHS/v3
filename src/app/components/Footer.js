@@ -5,7 +5,7 @@ export default function Footer() {
     { name: "GitHub", href: "https://github.com/HarryAhnHS", icon: Github },
     { name: "LinkedIn", href: "https://www.linkedin.com/in/hongsuh-ahn-b7520a188/", icon: Linkedin },
     { name: "Email", href: "mailto:harryahn@usc.edu", icon: Mail },
-    { name: "Resume", href: "/resume.pdf", icon: FileText },
+    { name: "Resume", href: "/Hongsuh_Ahn_CV.pdf", icon: FileText },
     { name: "Source Code", href: "https://github.com/HarryAhnHS/v3", icon: Code }
   ];
 

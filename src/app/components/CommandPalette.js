@@ -158,7 +158,7 @@ export default function CommandPalette() {
         runCommand(() => window.open("https://github.com/harryahnhs", "_blank"));
       } else if (key === "r") {
         e.preventDefault();
-        runCommand(() => window.open("/resume.pdf", "_blank"));
+        runCommand(() => window.open("/Hongsuh_Ahn_CV.pdf", "_blank"));
       } else if (key === "e") {
         e.preventDefault();
         runCommand(() => window.open("mailto:harryahn@usc.edu", "_blank"));
@@ -333,7 +333,7 @@ export default function CommandPalette() {
                 </Command.Item>
                 <Command.Item
                   value="resume"
-                  onSelect={() => runCommand(() => window.open("/resume.pdf", "_blank"))}
+                  onSelect={() => runCommand(() => window.open("/Hongsuh_Ahn_CV.pdf", "_blank"))}
                   className="flex items-center gap-2 px-3 py-2 text-sm text-stone-600 dark:text-stone-400 rounded hover:bg-stone-100 dark:hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-100 dark:data-[selected=true]:bg-stone-800"
                 >
                   <FileText className="h-4 w-4" />

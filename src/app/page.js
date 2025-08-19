@@ -109,7 +109,7 @@ export default function Home() {
             <div className="group flex items-center text-base font-medium">
               <span className="text-lg">📄</span>
               <LinkButton
-                href="/resume.pdf"
+                href="/Hongsuh_Ahn_CV.pdf"
                 target="_blank"
                 className="transition-colors duration-300 mx-2"
               >
