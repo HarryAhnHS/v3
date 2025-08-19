@@ -45,17 +45,17 @@ export default function Home() {
         <li className="fade-in mt-10 w-[90%] md:w-[70%]">
           <h3 className="italic text-neutral-900 dark:text-white">currently, I am:</h3>
           <ul className="mt-2 space-y-2 pl-4">
-            <li className="transition hover:translate-x-2">📚 studying BS in Computer Science @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton>.</li>
-            <li className="transition hover:translate-x-2">🌋 building at <LinkButton href="https://usclavalab.org/">LavaLab</LinkButton>, USC&apos;s premier startup incubator.</li>
+            <li className="transition hover:translate-x-2">📚 studying BS + MS in CS @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton>.</li>
+            <li className="transition hover:translate-x-2">🗓️ engineering at <LinkButton href="https://usedayli.framer.website/">Dayli</LinkButton>, an AI-powered social coordinator, streamlining the way groups meet.</li>
             <li className="transition hover:translate-x-2">💻 developing at <LinkButton href="https://giving.usc.edu/">USC University Advancement</LinkButton>.</li>
           </ul>
         </li>
         {/* History */}
         <li className="fade-in mt-10 w-[90%] md:w-[70%]">
-          <h3 className="italic text-neutral-900 dark:text-white">recently, I:</h3>
+          <h3 className="italic text-neutral-900 dark:text-white">in the past, I:</h3>
           <ul className="mt-2 space-y-2 pl-4">
+          <li className="transition hover:translate-x-2">🔹 launched <LinkButton href="https://mylily.org/">Lily</LinkButton> at <LinkButton href="https://usclavalab.org/">LavaLab</LinkButton>, USC&apos;s premier startup incubator.</li>
             <li className="transition hover:translate-x-2">🔹 interned as SWE at <LinkButton href="https://www.qraftec.com/">Qraft Technologies</LinkButton>, a fintech startup.</li>
-            <li className="transition hover:translate-x-2">🔹 built and deployed an <LinkButton href="https://toolate.up.railway.app/">AI product similarity evaluator</LinkButton> in 3 days.</li>
             <li className="transition hover:translate-x-2">🔹 completed <LinkButton href="https://www.theodinproject.com/">The Odin Project</LinkButton>, a comprehensive coding bootcamp in full-stack JS.</li>
           </ul>
         </li>
