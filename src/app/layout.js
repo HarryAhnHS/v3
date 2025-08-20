@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         className={`${lato.className} antialiased`}
       >
         <ThemeProvider>
-        <main className="flex justify-center min-h-screen selection:bg-yellow-200 bg-stone-50 dark:bg-stone-950 relative">
+        <main className="flex justify-center min-h-scen selection:bg-yellow-200 bg-stone-50 dark:bg-stone-950 relative">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] dark:bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] pointer-events-none"></div>
             <div className="relative flex flex-col gap-4 w-full md:max-w-[900px] my-6 md:m-20 text-neutral-500 dark:text-neutral-400 font-[380] md:mt-[60px]">
               <Header />

@@ -3,7 +3,7 @@ export default function CurvedArrow({ className }) {
       <div className={`flex items-end opacity-0 animate-[fadeIn_0.5s_ease-in_forwards] ${className}`}>
         <div className="relative">
           <p className="text-sm text-stone-600 dark:text-stone-400 font-medium mb-1 whitespace-nowrap">
-            psst... try this!
+            try this!
           </p>
           <svg
             width="40"

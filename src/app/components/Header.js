@@ -81,7 +81,7 @@ export default function Header() {
                 {/* Command Palette Toggle*/}
                 {!isMobileDevice && (
                     <div className="relative">
-                        {showArrow && <CurvedArrow className="hidden lg:block absolute -top-14 -right-14" />}
+                        {showArrow && <CurvedArrow className="hidden lg:block absolute -top-14 -right-4" />}
                         <button
                         onClick={openCommandPalette}
                         className="hidden sm:flex items-center cursor-pointer gap-1 text-xs text-stone-500 dark:text-stone-400 bg-stone-50 dark:bg-stone-800 px-2 py-1 rounded-lg border border-stone-200 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-700 hover:border-stone-300 dark:hover:border-stone-600 transition-colors duration-200"

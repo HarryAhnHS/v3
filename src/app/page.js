@@ -30,7 +30,7 @@ export default function Home() {
             <Image src={Me} alt="Harry Ahn" layout="fill" objectFit="cover" style={{ transform: "scale(1.2)" }} />
           </div>
           <div className="text-neutral-900 dark:text-white">
-            <h1 className="fade-in text-3xl lg:text-4xl">Harry Ahn</h1>
+            <h1 className="fade-in text-3xl lg:text-4xl">Harry (Hongsuh) Ahn</h1>
             <h2 className="fade-in font-extralight text-base lg:text-xl">
               Full-Stack Software Engineer
             </h2>
@@ -42,32 +42,62 @@ export default function Home() {
 
       <ul className="w-full flex flex-col items-center justify-center">
         {/* Current */}
-        <li className="fade-in mt-10 w-[90%] md:w-[70%]">
-          <h3 className="italic text-neutral-900 dark:text-white">currently, I am:</h3>
-          <ul className="mt-2 space-y-2 pl-4">
-            <li className="transition hover:translate-x-2">📚 studying BS + MS in CS @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton>.</li>
-            <li className="transition hover:translate-x-2">🗓️ engineering at <LinkButton href="https://usedayli.framer.website/">Dayli</LinkButton>, an AI-powered social coordinator, streamlining the way groups meet.</li>
-            <li className="transition hover:translate-x-2">💻 developing at <LinkButton href="https://giving.usc.edu/">USC University Advancement</LinkButton>.</li>
+        <li className="fade-in mt-12 w-[90%] md:w-[70%]">
+          <h3 className="italic text-neutral-900 dark:text-white mb-4 text-lg">currently, I am:</h3>
+          <ul className="space-y-3">
+            <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
+              <span className="text-xl mr-3 flex-shrink-0">📚</span>
+              <span className="leading-relaxed">studying BS + MS in Computer Science @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton></span>
+            </li>
+            <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
+              <span className="text-xl mr-3 flex-shrink-0">🗓️</span>
+              <span className="leading-relaxed">founding engineer at <LinkButton href="https://usedayli.framer.website/">Dayli</LinkButton>, an AI-powered social coordinator, streamlining the way groups meet</span>
+            </li>
+            <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
+              <span className="text-xl mr-3 flex-shrink-0">💻</span>
+              <span className="leading-relaxed">developing secure internal systems at <LinkButton href="https://giving.usc.edu/">USC University Advancement</LinkButton></span>
+            </li>
           </ul>
         </li>
         {/* History */}
-        <li className="fade-in mt-10 w-[90%] md:w-[70%]">
-          <h3 className="italic text-neutral-900 dark:text-white">in the past, I:</h3>
-          <ul className="mt-2 space-y-2 pl-4">
-          <li className="transition hover:translate-x-2">🔹 launched <LinkButton href="https://mylily.org/">Lily</LinkButton> at <LinkButton href="https://usclavalab.org/">LavaLab</LinkButton>, USC&apos;s premier startup incubator.</li>
-            <li className="transition hover:translate-x-2">🔹 interned as SWE at <LinkButton href="https://www.qraftec.com/">Qraft Technologies</LinkButton>, a fintech startup.</li>
-            <li className="transition hover:translate-x-2">🔹 completed <LinkButton href="https://www.theodinproject.com/">The Odin Project</LinkButton>, a comprehensive coding bootcamp in full-stack JS.</li>
+        <li className="fade-in mt-12 w-[90%] md:w-[70%]">
+          <h3 className="italic text-neutral-900 dark:text-white mb-4 text-lg">in the past, I:</h3>
+          <ul className="space-y-3">
+            <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
+              <span className="text-xl mr-3 flex-shrink-0">🔹</span>
+              <span className="leading-relaxed">built, pitched, and launched <LinkButton href="https://mylily.org/">Lily</LinkButton> at <LinkButton href="https://usclavalab.org/">LavaLab</LinkButton>, USC&apos;s premier startup incubator</span>
+            </li>
+            <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
+              <span className="text-xl mr-3 flex-shrink-0">🔹</span>
+              <span className="leading-relaxed">interned as SWE at <LinkButton href="https://www.qraftec.com/">Qraft Technologies</LinkButton>, where I automated financial data ETL pipelines</span>
+            </li>
+            <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
+              <span className="text-xl mr-3 flex-shrink-0">🔹</span>
+              <span className="leading-relaxed">completed <LinkButton href="https://www.theodinproject.com/">The Odin Project</LinkButton>, a comprehensive coding bootcamp in full-stack JS</span>
+            </li>
           </ul>
         </li>
         
         {/* Fun Facts */}
-        <li className="fade-in mt-10 w-[90%] md:w-[70%]">
-          <h3 className="italic text-neutral-900 dark:text-white">did you know?</h3>
-          <ul className="mt-2 space-y-2 pl-4">
-            <li className="transition hover:translate-x-2">🌎 i am Korean by birth, but have lived in France, Singapore, Hong Kong, UK, and am currently living in the US.</li>
-            <li className="transition hover:translate-x-2">🧩 i can solve the <LinkButton href="https://www.worldcubeassociation.org/persons/2015AHNH01">Rubik&apos;s cube</LinkButton> in 15 seconds.</li>
-            <li className="transition hover:translate-x-2">🎧 i sometimes produce <LinkButton href="https://soundcloud.com/hhypno/sets/portfolio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">trap instrumentals</LinkButton> on FL Studio 20 for fun.</li>
-            {/* <li className="transition hover:translate-x-2">🐩 i miss my <LinkButton href="https://drive.google.com/file/d/1-bqq4FrjviTp4diNt37gkz6cnVYWMXuf/view?usp=sharing">poodle</LinkButton> :&#40; he&apos;s at home.</li> */}
+        <li className="fade-in mt-12 w-[90%] md:w-[70%]">
+          <h3 className="italic text-neutral-900 dark:text-white mb-4 text-lg">did you know?</h3>
+          <ul className="space-y-3">
+            <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
+              <span className="text-xl mr-3 flex-shrink-0">🌎</span>
+              <span className="leading-relaxed">i am Korean by birth, but have lived in France, Singapore, Hong Kong, UK, and am currently living in the US</span>
+            </li>
+            <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
+              <span className="text-xl mr-3 flex-shrink-0">🧩</span>
+              <span className="leading-relaxed">i can solve the <LinkButton href="https://www.worldcubeassociation.org/persons/2015AHNH01">Rubik&apos;s cube</LinkButton> in 15 seconds</span>
+            </li>
+            <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
+              <span className="text-xl mr-3 flex-shrink-0">🎧</span>
+              <span className="leading-relaxed">i sometimes produce <LinkButton href="https://soundcloud.com/hhypno/sets/portfolio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">trap instrumentals</LinkButton> on FL Studio 20 for fun</span>
+            </li>
+            {/* <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
+              <span className="text-xl mr-3 mt-0.5 flex-shrink-0">🐩</span>
+              <span className="leading-relaxed">i miss my <LinkButton href="https://drive.google.com/file/d/1-bqq4FrjviTp4diNt37gkz6cnVYWMXuf/view?usp=sharing">poodle</LinkButton> :&#40; he&apos;s at home.</span>
+            </li> */}
           </ul>
         </li>
 
