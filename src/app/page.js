@@ -47,7 +47,7 @@ export default function Home() {
           <ul className="space-y-3">
             <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
               <span className="text-xl mr-3 flex-shrink-0">📚</span>
-              <span className="leading-relaxed">studying BS + MS in Computer Science @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton></span>
+              <span className="leading-relaxed">studying Computer Science @ <LinkButton href="https://www.cs.usc.edu/academic-programs/undergrad/">USC Viterbi School of Engineering</LinkButton></span>
             </li>
             <li className="flex items-start group transition-transform duration-200 hover:translate-x-2">
               <span className="text-xl mr-3 flex-shrink-0">🗓️</span>
