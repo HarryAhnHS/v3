@@ -8,7 +8,18 @@ import TicTacToe from "../assets/projects/TicTacToe.png";
 import InsidePDF from "../assets/projects/InsidePDF.png";
 import TooLateAI from "../assets/projects/Toolate.png";
 import TrackAnalyzer from "../assets/projects/TrackAnalyzer.png";
+import VoxelEditor from "../assets/projects/VoxelEditor.png";
 export const projects = [
+  {
+    title: "3D Voxel Editor",
+    href: "https://voxel-editor-production.up.railway.app/",
+    description: "Browser-based voxel editor built with Next.js, React Three Fiber, and TypeScript, combining a performant 3D sculpting experience with LLM-powered voxel generation under strict bounds and voxel-count guardrails. Built in 48 hours.",
+    image: VoxelEditor,
+    imageAlt: "3D Voxel Editor",
+    technologies: ["Next.js", "TypeScript", "React Three Fiber", "three.js", "Zustand", "Zod", "TailwindCSS", "LLM"],
+    github: "https://github.com/HarryAhnHS/voxel-editor",
+    demo: "https://voxel-editor-production.up.railway.app/"
+  },
   {
     title: "Semantic Music Tagger and Analyzer",
     href: "https://github.com/HarryAhnHS/bridge-ml-api",

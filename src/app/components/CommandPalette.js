@@ -11,29 +11,34 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 const projects = [
   {
+    title: "3D Voxel Editor",
+    href: "https://voxel-editor-production.up.railway.app/",
+    shortcut: "1",
+  },
+  {
     title: "Semantic Music Tagger and Analyzer",
     href: "https://bridge-ml-client-production.up.railway.app/",
-    shortcut: "1",
+    shortcut: "2",
   },
   {
     title: "TooLate.ai",
     href: "https://toolate.up.railway.app/",
-    shortcut: "2",
+    shortcut: "3",
   },
   {
     title: "InsidePDF",
     href: "https://inside-pdf.up.railway.app/",
-    shortcut: "3",
+    shortcut: "4",
   },
   {
     title: "Flexor",
     href: "https://flexor-front-end-2c6r.vercel.app/",
-    shortcut: "4",
+    shortcut: "5",
   },
   {
     title: "FileStorage",
     href: "https://file-storage-production.up.railway.app/",
-    shortcut: "5",
+    shortcut: "6",
   },
 ];
 
@@ -169,8 +174,8 @@ export default function CommandPalette() {
         e.preventDefault();
         runCommand(() => toggleTheme());
       } else if (pathname === "/projects") {
-        // Check for Digit1 through Digit5
-        const match = e.code.match(/^Digit([1-5])$/);
+        // Check for Digit1 through Digit6
+        const match = e.code.match(/^Digit([1-6])$/);
         if (match) {
           e.preventDefault();
           const num = parseInt(match[1]);
